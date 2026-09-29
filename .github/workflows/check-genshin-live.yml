@@ -1,0 +1,113 @@
+name: Check deployed Genshin allocator
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'genshin-weapon-allocator/index.html'
+      - '.github/workflows/check-genshin-live.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: check-genshin-live
+  cancel-in-progress: true
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Verify published HTML matches committed version
+        run: |
+          python3 - <<'PY'
+          import hashlib, time, urllib.request
+          from pathlib import Path
+          url = 'https://mianaz.github.io/genshin-weapon-allocator/'
+          expected = hashlib.sha256(Path('genshin-weapon-allocator/index.html').read_bytes()).hexdigest()
+          for attempt in range(36):
+              try:
+                  request = urllib.request.Request(url + '?check=' + str(time.time_ns()), headers={'Cache-Control': 'no-cache'})
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      body = response.read()
+                      assert response.status == 200
+                  actual = hashlib.sha256(body).hexdigest()
+                  if actual == expected:
+                      print('Published HTTPS URL:', url)
+                      print('HTTP 200; identical HTML SHA256:', actual)
+                      break
+                  print('Published version differs; retrying')
+              except Exception as error:
+                  print(type(error).__name__, str(error))
+              time.sleep(5)
+          else:
+              raise RuntimeError('Published HTML did not match the committed version')
+          PY
+      - name: Install browser test dependencies
+        run: |
+          python3 -m venv /tmp/genshin-check
+          /tmp/genshin-check/bin/pip install playwright==1.55.0
+          /tmp/genshin-check/bin/python -m playwright install --with-deps chromium
+      - name: Check desktop mobile inventory theater and persistence
+        run: |
+          /tmp/genshin-check/bin/python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          url = 'https://mianaz.github.io/genshin-weapon-allocator/'
+          checks = []
+          errors = []
+          def check(condition, label):
+              assert condition, label
+              checks.append(label)
+              print('PASS:', label)
+          def state(page):
+              return page.evaluate('appState()')
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True, args=['--no-sandbox'])
+              context = browser.new_context(viewport={'width': 1440, 'height': 1050})
+              page = context.new_page()
+              page.on('pageerror', lambda error: errors.append(str(error)))
+              response = page.goto(url, wait_until='networkidle')
+              page.wait_for_function('typeof appState === "function" && appState().result !== null')
+              check(response.status == 200, 'Desktop HTTPS page loads')
+              check(state(page)['result']['summary']['weighted_total'] == 11908, 'Baseline score 11908')
+              page.locator('[data-tab="inventory"]').click()
+              page.locator('#bulkQuantity').fill('5')
+              page.locator('#applyBulk').click()
+              check(all(w['quantity'] == 5 for w in state(page)['data']['weapons'] if w['name'].startswith('西风')), 'Favonius inventory accepts five copies')
+              page.locator('#solveBtn').click()
+              check(state(page)['result']['summary']['weighted_total'] == 11937, 'Expanded inventory optimizes to 11937')
+              page.reload(wait_until='networkidle')
+              page.wait_for_function('typeof appState === "function" && appState().result !== null')
+              check(state(page)['result']['summary']['weighted_total'] == 11937, 'Real browser storage survives refresh')
+              page.locator('#theaterMode').click()
+              page.locator('#rosterPaste').fill('枫原万叶、琴、行秋、夜兰、雷电将军、五郎、珐露珊、迪奥娜')
+              page.locator('#rosterReplace').click()
+              check(len(state(page)['data']['planning']['theater']['roster']) == 8, 'Theater roster accepts eight characters')
+              page.locator('[data-source="yelan"]').select_option('friend')
+              page.locator('[data-source="raiden"]').select_option('trial')
+              page.locator('#solveBtn').click()
+              result = state(page)['result']
+              check(result['summary']['character_count'] == 6 and result['summary']['external_count'] == 2, 'Trial and friend equipment excluded from own stock')
+              check(len(result['assignment']) == len({row['physical_id'] for row in result['assignment']}), 'Every weapon copy has at most one owner')
+              page.locator('[data-tab="inventory"]').click()
+              page.locator('#search').fill('西风剑')
+              page.locator('[data-reserve="fav_sword"]').fill('1')
+              page.locator('[data-reserve="fav_sword"]').press('Tab')
+              page.locator('#solveBtn').click()
+              weapon = next(w for w in state(page)['result']['inventory'] if w['id'] == 'fav_sword')
+              check((weapon['quantity'], weapon['reserved'], weapon['available']) == (5, 1, 4), 'Theater reservation leaves four available copies')
+              mobile = browser.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True)
+              phone = mobile.new_page()
+              phone.on('pageerror', lambda error: errors.append(str(error)))
+              phone.goto(url, wait_until='networkidle')
+              phone.wait_for_function('typeof appState === "function" && appState().result !== null')
+              check(phone.locator('#solveBtn').is_visible() and state(phone)['result']['summary']['weighted_total'] == 11908, 'Mobile page loads and solve button is visible')
+              check(not errors, 'No JavaScript runtime errors')
+              browser.close()
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('## Genshin allocator live checks\n\n' + '\n'.join('- PASS: ' + item for item in checks) + '\n')
+          print(json.dumps({'url': url, 'passed': len(checks), 'checks': checks, 'javascript_errors': errors}, ensure_ascii=False))
+          PY
