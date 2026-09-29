@@ -1,0 +1,5608 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>提瓦特武器分配 · 库存与剧诗</title><style>
+:root{color-scheme:dark;--bg:#101620;--panel:#192330;--panel2:#202d3c;--text:#f0eee7;--muted:#a9b4c2;--line:#334253;--gold:#e4bd77;--purple:#c3a5ec;--green:#9ed9bd;--red:#ffaaaa;--font:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.65 var(--font)}button,input,select,textarea{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer;border:1px solid var(--line);color:var(--text);background:var(--panel2);border-radius:8px;padding:9px 14px}button:hover{border-color:var(--gold)}button:disabled{opacity:.45;cursor:not-allowed}button.primary{background:var(--gold);color:#17202a;border-color:var(--gold);font-weight:750}input,select,textarea{background:#111a25;border:1px solid var(--line);border-radius:7px;padding:8px 10px;color:var(--text);min-width:0}input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}a{color:var(--gold)}h1,h2,h3,p{margin-top:0}h1{font-size:34px;letter-spacing:.04em;line-height:1.4;margin-bottom:10px}h2{font-size:23px}h3{font-size:16px}.muted{color:var(--muted)}small{font-size:12px}.shell{max-width:1440px;margin:auto;padding:34px 38px 70px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;gap:20px}.brand{font-weight:750;letter-spacing:.13em}.brand .star{color:var(--gold);margin-right:10px;font-size:20px}.pill{border:1px solid var(--line);border-radius:30px;padding:4px 10px;font-size:11px;color:var(--muted);white-space:nowrap}.hero{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.eyebrow{color:var(--gold);letter-spacing:.2em;font-size:11px;margin-bottom:10px}.intro{color:var(--muted);max-width:770px}.actions{display:flex;gap:9px;flex-wrap:wrap}.notice{margin:20px 0;padding:14px 18px;border:1px solid #715e38;border-left:3px solid var(--gold);border-radius:8px;background:#28271f;color:#ead9b7}.notice strong{color:var(--gold)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:19px 20px}.stat .value{font-size:31px;font-weight:750;line-height:1.25;margin:9px 0}.stat .label{font-size:12px;color:var(--muted)}.good{color:var(--green)}.sectionbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:30px 0 16px}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{background:none;color:var(--muted);border-color:transparent}.tab.active{color:var(--gold);background:var(--panel2);border-color:var(--line)}.filters{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.search{min-width:245px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}.tablewrap{overflow:auto;max-height:730px}table{border-collapse:collapse;width:100%;white-space:nowrap}th{color:var(--muted);font-size:12px;font-weight:500;text-align:left;background:#202c3a;position:sticky;top:0;z-index:1;padding:12px 16px}td{border-top:1px solid #2b3848;padding:12px 16px}tr:hover td{background:#1e2b3a}.name{font-size:15px;font-weight:650}.role{font-size:12px;color:var(--muted);max-width:205px;white-space:normal}.weapon{font-weight:650;letter-spacing:.02em}.gold{color:var(--gold)}.purple{color:var(--purple)}.copy{font-size:11px;color:var(--muted);margin-left:6px}.score{font-variant-numeric:tabular-nums;font-weight:650}.loss{color:var(--muted);font-size:12px}.weight{width:65px;padding:5px 7px}.mini{padding:5px 9px;font-size:12px}.footerbar{border-top:1px solid var(--line);padding:13px 17px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px}.hidden{display:none!important}.status{padding:11px 14px;background:#193a30;border:1px solid #37634e;border-radius:8px;margin:15px 0;color:var(--green)}.status.dirty{background:#362d1e;border-color:#806338;color:var(--gold)}.status.error{background:#3b2227;border-color:#834852;color:var(--red)}.article{padding:28px;max-width:1050px}.article p{color:#c4cdd7}.article h3{margin:25px 0 8px;color:var(--gold)}.article pre{white-space:pre-wrap;background:#101923;padding:16px;border-radius:8px;color:var(--green)}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.sourceitem{border-bottom:1px solid var(--line);padding:13px 0}.footnote{font-size:12px;color:var(--muted);margin-top:24px}dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:14px;padding:26px;max-width:760px;width:calc(100% - 28px);max-height:88vh}dialog::backdrop{background:#000a;backdrop-filter:blur(4px)}.dialoghead{display:flex;justify-content:space-between;gap:15px;align-items:start}.dialoggrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}.dialoggrid label{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:12px}.candrow{display:grid;grid-template-columns:1fr 90px 48px;gap:9px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}.candlist{max-height:265px;overflow:auto}.dialogactions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}.addrow{display:flex;gap:8px;margin:13px 0}.addrow select{flex:1}.addrow input{width:75px}.exportmenu{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.proof{background:#101923;padding:15px;border-radius:8px;margin:14px 0;color:var(--green)}.empty{text-align:center;padding:40px;color:var(--muted)}
+@media(max-width:900px){.shell{padding:23px 18px 45px}.topbar{margin-bottom:27px}.hero{grid-template-columns:1fr}h1{font-size:28px}.stats{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.filters{width:100%}.search{min-width:0;flex:1}td,th{padding:11px 12px}.article{padding:20px}.tablewrap{max-height:65vh}.topbar .muted{display:none}.dialoggrid{grid-template-columns:1fr}}
+@media print{body{background:#fff;color:#111}.shell{padding:0}.topbar,.hero .actions,.actions,.filters,.tabs,.notice,.status,.mini,.weight,td input,.footnote{display:none!important}.panel,.stat{background:#fff;border-color:#ddd}.tablewrap{overflow:visible;max-height:none}td,th{background:#fff!important;color:#111!important;font-size:10px;padding:5px}.gold,.purple,.muted,.role,.copy{color:#333}.stats{grid-template-columns:repeat(4,1fr)}th{position:static}}
+
+.modepanel{padding:18px 20px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:22px 0 14px}.modehead{display:flex;align-items:center;gap:15px;justify-content:space-between;flex-wrap:wrap}.modebuttons{display:flex;gap:8px;flex-wrap:wrap}.modebuttons button.selected{border-color:var(--gold);color:var(--gold);background:#332e23}.modebuttons button{font-weight:650}.theatersettings{border-top:1px solid var(--line);margin-top:17px;padding-top:18px}.planbar{display:flex;align-items:end;gap:10px;flex-wrap:wrap}.planbar label{display:grid;gap:5px;font-size:12px;color:var(--muted)}.planbar input{width:210px}.planbar select{max-width:350px}.help{font-size:12px;color:var(--muted);margin:12px 0 0}.compactnotice{background:#172d30;border-color:#34595b;color:#c6e2df}.inlinecheck{display:flex;align-items:center;gap:8px;margin-top:12px}.stock{width:88px;padding:7px}.sourcebadge{font-size:12px;color:var(--green)}.paneltools{padding:18px;border-bottom:1px solid var(--line)}.paneltools .filters{margin-bottom:12px}.rosterpaste{display:flex;gap:12px;align-items:center;margin-top:12px}.rosterpaste textarea{flex:1;min-width:180px;min-height:74px;resize:vertical}.rosterpaste .actions{max-width:310px}.inventorytools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.inventorytools input{width:88px}.externalnote{width:250px;max-width:100%}.holders{white-space:normal;min-width:140px;max-width:300px}.bad{color:var(--red)}.storage{font-size:12px;color:var(--muted);margin-top:10px}.instructions{padding:18px;background:#14262b;border:1px solid #2b4c52;border-radius:8px;margin-top:12px}.instructions p:last-child{margin:0}.article h2{margin-top:20px}.sectionbar{gap:12px}.methodgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.methodgrid>div{border:1px solid var(--line);border-radius:10px;padding:18px}.toolbarcaption{font-size:12px;color:var(--muted);margin-top:8px}.mini.selected{border-color:var(--gold)}
+@media(max-width:700px){.rosterpaste{flex-direction:column;align-items:stretch}.rosterpaste .actions{max-width:none}.planbar{align-items:stretch}.planbar>*{max-width:100%}.planbar label{flex:1;min-width:160px}.planbar input{width:100%}.planbar select{width:100%}.modepanel{padding:15px}.modehead{align-items:start}.paneltools{padding:14px}.search{min-width:150px}.methodgrid{grid-template-columns:1fr}.stats{gap:9px}.stat{padding:13px}.stat .value{font-size:25px}.topbar{gap:10px}.brand{font-size:12px}.intro{margin-bottom:15px}}
+summary{cursor:pointer;touch-action:manipulation}.detailsummary{color:var(--muted);padding:0 0 12px;font-size:13px}details:not([open])>.detailsummary{padding-bottom:0}</style></head><body><div class="shell">
+<header class="topbar"><div class="brand"><span class="star">✧</span>TEYVAT · ARMORY</div><span class="muted">按你的库存，为本次阵容分配武器。</span><span class="pill">v2.0 · 离线版</span></header>
+<section class="hero"><div><div class="eyebrow">INVENTORY & THEATER PLANNER</div><h1>武器分配工作台</h1><p class="intro">西风三把、五把，或更多。填写实际库存，选择全角色或本次剧诗名单，再计算一套没有副本冲突的分配。</p></div><div class="actions"><button class="primary" id="solveBtn">重新分配</button><button id="importBtn">导入配置</button><button id="configBtn">保存配置</button></div></section>
+<div class="storage" id="storageStatus">修改后自动保存到本浏览器；建议同时导出配置备份。</div>
+<section class="modepanel"><div class="modehead"><div class="modebuttons"><button id="accountMode" aria-pressed="true">全角色分配</button><button id="theaterMode" aria-pressed="false">幻想真境剧诗</button></div><span class="muted" id="modeCount"></span></div>
+<div id="theaterSettings" class="theatersettings hidden"><details id="theaterDetails" open><summary class="detailsummary">方案保存、锁定与开演前配装说明</summary><div class="planbar"><label>当前剧诗方案名<input id="planName" maxlength="120"></label><button id="savePlan">保存 / 覆盖方案</button><select id="savedPlans" aria-label="已保存剧诗方案"></select><button id="loadPlan">载入</button><button id="newPlan">新建空白方案</button></div><p class="help">同名保存会覆盖该方案。方案保存名单、优先级、锁定和预留数量；所有方案共用实际武器库存。</p><label class="inlinecheck"><input type="checkbox" id="respectLocks">使用全角色方案的武器锁定；角色单独设置的剧诗锁定优先。</label><div class="instructions"><p>开演前，为<strong>本轮完整参演名单</strong>一次性安排武器。未参演角色释放库存；需要保留的数量可在“武器库存 → 剧诗预留”设置。</p><p class="help">试用 / 好友助演标记为自带装备。请按本期游戏界面核对元素、特邀、等级及人数资格。本工具只处理配装，不计算每幕配队、活力消耗或祝福；挑战中的换装生效规则请以游戏提示为准。</p></div></details></div></section>
+<details class="notice" id="assumptionDetails" open><summary><strong>偏好分与精炼前提</strong></summary><p style="margin:9px 0 0">程序精确优化当前候选偏好分。评分沿用上一版可编辑基线，尚未完成全部配对的实战核验。库存按<strong>精炼后的成品数量</strong>填写；同一库存条目共用其精炼与评分假设。</p></details>
+<div class="stats"><div class="stat"><div class="label">已配装 / 本次自有角色</div><div class="value" id="nchars">—</div><small class="muted">试用与好友装备不占本人库存</small></div><div class="stat"><div class="label">加权偏好总分 · 非伤害</div><div class="value" id="total">—</div><small class="muted" id="bestcount">—</small></div><div class="stat"><div class="label">库存冲突</div><div class="value good" id="conflicts">—</div><small class="muted" id="rarities">—</small></div><div class="stat"><div class="label">当前评分最优性证书</div><div class="value good" id="gap">—</div><small class="muted">可行解成本 = 对偶下界</small></div></div>
+<div id="status" class="status" role="status" aria-live="polite">正在读取配置…</div>
+<div class="sectionbar"><nav class="tabs" aria-label="工作区"><button class="tab active" data-tab="allocation">分配结果</button><button class="tab hidden" id="rosterTab" data-tab="roster">参演角色</button><button class="tab" data-tab="inventory">武器库存</button><button class="tab" data-tab="method">算法与资料</button></nav><div class="filters" id="filters"><input class="search" id="search" aria-label="搜索角色武器或玩法" placeholder="搜索角色、武器或玩法…"><select id="typeFilter" aria-label="武器类型"><option value="">全部武器类型</option><option>单手剑</option><option>双手剑</option><option>长柄武器</option><option>法器</option><option>弓</option></select></div></div>
+<section id="allocation" class="panel tabpanel"><div class="tablewrap"><table><thead><tr><th>参与 / 来源</th><th>角色 / 默认玩法</th><th>分配武器 / 副本</th><th>偏好分</th><th>优先级</th><th>候选与锁定</th></tr></thead><tbody id="rows"></tbody></table></div><div class="footerbar"><span id="rowcount"></span><div class="actions"><button class="mini" id="csvBtn">导出分配 CSV</button><button class="mini" id="resultBtn">导出结果与证书</button></div></div></section>
+<section id="roster" class="panel tabpanel hidden"><div class="paneltools"><div class="filters"><input class="search" id="rosterSearch" aria-label="搜索参演角色" placeholder="搜索角色，例如：万叶"><select id="rosterType" aria-label="筛选参演武器类型"><option value="">全部武器类型</option><option>单手剑</option><option>双手剑</option><option>长柄武器</option><option>法器</option><option>弓</option></select><label><input type="checkbox" id="selectedOnly">仅看已选</label><button class="mini" id="rosterFiltered">将筛选结果加入自有名单</button><button class="mini" id="rosterClear">清空名单</button></div><p class="help" id="rosterCount"></p><div class="rosterpaste"><textarea id="rosterPaste" aria-label="批量输入参演名单" placeholder="粘贴本次参演角色，用逗号、顿号或换行分隔。
+例：枫原万叶、琴、行秋"></textarea><div class="actions"><button id="rosterReplace">用名单替换</button><button id="rosterAppend">追加名单</button></div></div><p class="help">新加入的角色默认为自有；已选角色保留其来源。无法识别或存在歧义的名字会报错，请修正后再提交。</p></div><div class="tablewrap"><table><thead><tr><th>参演方式</th><th>角色 / 默认玩法</th><th>武器类型</th><th>剧诗优先级</th><th>配装 / 自带装备备注</th></tr></thead><tbody id="rosterRows"></tbody></table></div></section>
+<section id="inventory" class="panel tabpanel hidden"><div class="paneltools"><div class="inventorytools"><label for="bulkScope">批量修改</label><select id="bulkScope"><option value="favonius">全部西风系列</option><option value="sacrificial">全部祭礼系列</option><option value="filtered">当前搜索 / 筛选结果</option><option value="four">全部四星武器</option><option value="five">全部五星武器</option></select><input id="bulkQuantity" type="number" min="0" max="1000000" step="1" value="5" aria-label="批量库存数量"><span class="muted">把 / 每种</span><button id="applyBulk">应用库存</button><button id="undoBulk" disabled>撤销批量</button><button class="mini" id="clearReservations">清空剧诗预留</button></div><div class="toolbarcaption" id="bulkPreview"></div><p class="help">五星、四星均可填写0或正整数，3把以上可用。总库存为成品数；剧诗可用量 = 总库存 − 预留。精炼不同的副本需分为独立数据条目并分别评分，本界面的数量修改不进行伤害换算。</p></div><div class="tablewrap"><table><thead><tr><th>武器</th><th>类型</th><th>星级 / 精炼基线</th><th>总库存</th><th id="reserveHeader">预留</th><th>可分配</th><th>已用</th><th>本方案持有人</th></tr></thead><tbody id="inventoryRows"></tbody></table></div><div class="footerbar"><span>库存变更后点击“重新分配”。若预留或锁定超过现有库存，程序会提示修正。</span></div></section>
+<section id="method" class="panel tabpanel hidden"><div class="article"><h2>库存与参演名单如何进入算法？</h2><p>全角色模式使用已启用的角色。剧诗模式使用名单中标记为“自有”的角色；试用和好友助演记录自带装备。预留数量先从总库存扣除，再对本次自有角色求解。</p><pre>对本次每个自有角色 i：恰好分配一把武器
+对每种武器 w：使用数量 ≤ 总库存[w] − 本方案预留[w]
+目标：最大化 Σ 优先级[i] × 候选偏好分[i,w]
+要求：武器类型匹配、配对已评分、满足本方案锁定</pre><p>西风剑库存从2改到5，相当于加入3个可独立占用的武器副本。每个角色仍只能拿一把，每个副本仍只分给一人。矩形匈牙利算法会重新比较整份名单的交换收益。</p><h3>大库存如何处理？</h3><p>若某把武器最多只有6位本次角色能用，即使库存填写100把，计算矩阵也只需要6个同等副本；其余副本保持剩余库存。这种裁剪不会改变可达到的最优分数。输入安全上限为每条库存1,000,000把，矩阵上限为2,000,000格，这些是程序防护而非游戏数量限制。</p><h3>最优性验证</h3><p>各武器类型分别求解。证书校验每个副本最多使用一次、所有对偶不等式成立，且实际成本与数学下界相等。证书适用于给定名单、库存、锁定及候选分数。相同分数可能对应多种分配。</p><div class="proof" id="proofs"></div><h3>剧诗方案的范围</h3><p>这是开演前的一次性配装规划。名单应包含本轮计划带入的全部自有角色，不只当前一幕的四人；本次计算不给不同幕重复占用同一副本。软件没有自动读取当期规则，也没有验证入场资格、规划活力或模拟队伍伤害。</p><h3>优先级与精炼</h3><p>优先级默认继承全角色值，剧诗中可单独修改。0仍然需要配装，只是不计入目标分。把某把武器库存设为5，表示有5把同精炼基线的成品；不表示它们可以合成为5把精5。不同精炼的性能差异需要独立评分。</p><h3>资料与评分范围</h3><p id="coverage"></p><div id="assumptions"></div><h3>参考资料</h3><div id="sourcesList"></div><h3>保存与隐私</h3><p>全部计算在浏览器本地完成，不连接游戏账号。修改自动保存到本浏览器的本地存储；清理浏览器、使用隐私模式、换设备或换文件路径可能无法恢复，因此建议导出“保存配置”。JSON备份包含总库存、候选评分、全角色配置、当前剧诗方案和已保存方案。旧版配置可直接导入。</p></div></section>
+<p class="footnote">独立玩家工具 · 非米哈游官方产品 · 程序v2.0 · 游戏数据与评分需按实战条件核对。</p></div>
+<input id="fileInput" type="file" accept="application/json,.json" hidden>
+<dialog id="editor"><div class="dialoghead"><div><h2 id="editTitle"></h2><small class="muted" id="editReview"></small></div><button class="mini" id="closeEditor" aria-label="关闭">关闭</button></div><p class="help">候选评分与玩法备注由两个模式共用；锁定作用于下方注明的方案。</p><div class="dialoggrid"><label>玩法标签<input id="editRole"></label><label><span id="lockScope"></span><select id="editLock"></select></label></div><label class="muted" style="display:block;font-size:12px">前提备注<textarea id="editNote" rows="2" style="width:100%;margin-top:5px"></textarea></label><h3 style="margin-top:18px">候选偏好分 <small class="muted">0–100整数，非伤害百分比</small></h3><div id="candidateList" class="candlist"></div><div class="addrow"><select id="addWeapon" aria-label="添加同类型武器"></select><input id="addScore" type="number" min="0" max="100" value="90" aria-label="新增候选评分"><button id="addCandidate" class="mini">添加</button></div><div id="editSources" class="muted" style="font-size:12px"></div><div id="editError" class="hidden status error"></div><div class="dialogactions"><button id="cancelEdit">取消</button><button id="saveEdit" class="primary">保存并重新分配</button></div></dialog>
+<script id="embeddedData" type="application/json">{
+  "schema_version": 2,
+  "title": "原神 7.1 全角色武器分配：启发式评分基线",
+  "version": "7.1",
+  "as_of": "2026-09-28",
+  "status": "exact_optimization_of_heuristic_scores",
+  "scope": "全角色与剧诗参演名单使用同一库存；候选评分为既有启发式基线，未评分配对不参与求解。旅行者只占一位。",
+  "assumptions": [
+    "默认五星每种1把、四星每种2把；所有武器数量均可修改为0或正整数，数量指精炼完成后的成品。程序输入安全上限为每条库存1000000把，不代表游戏上限。",
+    "五星武器按精1，四星武器按精5；这不是由库存数量自动推导的事实，而是本次明确添加的基线假设。",
+    "角色与武器默认90级；五星角色按0命、四星按6命、旅行者按6命；埃洛伊无命座。程序不自动模拟这些属性。",
+    "每位角色只选表中一种玩法；充能、队伍、圣遗物、武器被动必须满足备注前提。未执行伤害模拟或圣遗物联合优化。",
+    "所有角色优先级默认1。100只是该角色候选中的偏好基准，不是100%伤害；所有数值为作者拟定，不是KQM或官方数值。",
+    "主结果仅用四/五星；三星库存没有给出，因此没有默认为无限。讨龙、黑缨枪、弹弓等可另行建模，可能改变真实最优。",
+    "未评分并不代表武器弱或被数学证明支配；库存收录与配对评估覆盖是两件事。最优性证书只适用于当前候选和分数。",
+    "没有强制专武归原角色；也没有稀有度优先。等分结果可有多个，固定输入顺序仅用于稳定输出。"
+  ],
+  "sources": [
+    {
+      "title": "官方7.1版本入口",
+      "url": "https://ys.mihoyo.com/",
+      "scope": "版本核实"
+    },
+    {
+      "title": "角色目录",
+      "url": "https://genshin-builds.com/zh-tw/characters",
+      "scope": "角色集合与中英文名称；去重旅行者，排除千星奇域人偶"
+    },
+    {
+      "title": "武器目录",
+      "url": "https://genshin-builds.com/zh-tw/weapons",
+      "scope": "中英文名称目录；非全面性能评价"
+    },
+    {
+      "title": "KQM",
+      "url": "https://keqingmains.com/",
+      "scope": "部分角色最新攻略；逐行sources区分已阅读与一般背景"
+    },
+    {
+      "title": "Vesna 初步攻略",
+      "url": "https://www.icy-veins.com/genshin-impact/vesna-guide-best-builds",
+      "scope": "7.1新角色候选关系"
+    },
+    {
+      "title": "Hungarian algorithm",
+      "url": "https://cp-algorithms.com/graph/hungarian-algorithm.html",
+      "scope": "矩形指派模型、势函数与最优性证明"
+    },
+    {
+      "title": "SciPy linear_sum_assignment",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html",
+      "scope": "独立求解器交叉验证"
+    }
+  ],
+  "excluded_catalog_entries": [
+    {
+      "name": "Tidal Echo",
+      "reason": "目录标记speculated，时间6.X不明确；不采用猜测数据。"
+    },
+    {
+      "name": "New Bough",
+      "reason": "页面仍为upcoming；未独立确认截至查询日可获取，默认禁用。"
+    },
+    {
+      "name": "Silver Light",
+      "reason": "页面仍为upcoming；未独立确认截至查询日可获取，默认禁用。"
+    },
+    {
+      "name": "Winter’s Heavy Heart",
+      "reason": "页面仍为beta/upcoming，默认禁用。"
+    },
+    {
+      "name": "Breezeborne Refrain",
+      "reason": "页面仍为beta/upcoming，默认禁用。"
+    }
+  ],
+  "weapons": [
+    {
+      "id": "aquila",
+      "name": "风鹰剑",
+      "name_en": "Aquila Favonia",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "skyblade",
+      "name": "天空之刃",
+      "name_en": "Skyward Blade",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "freedom",
+      "name": "苍古自由之誓",
+      "name_en": "Freedom-Sworn",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "summit",
+      "name": "斫峰之刃",
+      "name_en": "Summit Shaper",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "jadecutter",
+      "name": "磐岩结绿",
+      "name_en": "Primordial Jade Cutter",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "mist",
+      "name": "雾切之回光",
+      "name_en": "Mistsplitter Reforged",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "haran",
+      "name": "波乱月白经津",
+      "name_en": "Haran Geppaku Futsu",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "key",
+      "name": "圣显之钥",
+      "name_en": "Key of Khaj-Nisut",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "foliar",
+      "name": "裁叶萃光",
+      "name_en": "Light of Foliar Incision",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "splendor",
+      "name": "静水流涌之辉",
+      "name_en": "Splendor of Tranquil Waters",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "uraku",
+      "name": "有乐御簾切",
+      "name_en": "Uraku Misugiri",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "absolution",
+      "name": "赦罪",
+      "name_en": "Absolution",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "peak",
+      "name": "岩峰巡歌",
+      "name_en": "Peak Patrol Song",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "azure",
+      "name": "苍耀",
+      "name_en": "Azurelight",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "athame",
+      "name": "黑蚀",
+      "name_en": "Athame Artis",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "lightbearing",
+      "name": "朏魄含光",
+      "name_en": "Lightbearing Moonshard",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "exaiphanes",
+      "name": "星锋剑",
+      "name_en": "Exaiphanes Blade",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "whitelake",
+      "name": "白湖冬羽",
+      "name_en": "Whitelake Frostfeather",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "chrysalis",
+      "name": "蝶变",
+      "name_en": "Beyond the Chrysalis",
+      "type": "单手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "skypride",
+      "name": "天空之傲",
+      "name_en": "Skyward Pride",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "wolf",
+      "name": "狼的末路",
+      "name_en": "Wolf's Gravestone",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "unforged",
+      "name": "无工之剑",
+      "name_en": "The Unforged",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "pines",
+      "name": "松籁响起之时",
+      "name_en": "Song of Broken Pines",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "redhorn",
+      "name": "赤角石溃杵",
+      "name_en": "Redhorn Stonethresher",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "beacon",
+      "name": "苇海信标",
+      "name_en": "Beacon of the Reed Sea",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "verdict",
+      "name": "裁断",
+      "name_en": "Verdict",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "fang",
+      "name": "山王长牙",
+      "name_en": "Fang of the Mountain King",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "suns",
+      "name": "焚曜千阳",
+      "name_en": "A Thousand Blazing Suns",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "gest",
+      "name": "狼的武功歌",
+      "name_en": "Gest of the Mighty Wolf",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "teaspoon",
+      "name": "超越之匙",
+      "name_en": "A Teaspoon of Transcendence",
+      "type": "双手剑",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "jadewing",
+      "name": "和璞鸢",
+      "name_en": "Primordial Jade Winged-Spear",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "skyspine",
+      "name": "天空之脊",
+      "name_en": "Skyward Spine",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "vortex",
+      "name": "贯虹之槊",
+      "name_en": "Vortex Vanquisher",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "homa",
+      "name": "护摩之杖",
+      "name_en": "Staff of Homa",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "engulf",
+      "name": "薙草之稻光",
+      "name_en": "Engulfing Lightning",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "calamity",
+      "name": "息灾",
+      "name_en": "Calamity Queller",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "scarlet",
+      "name": "赤沙之杖",
+      "name_en": "Staff of the Scarlet Sands",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "crimson",
+      "name": "赤月之形",
+      "name_en": "Crimson Moon's Semblance",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "lumidouce",
+      "name": "柔灯挽歌",
+      "name_en": "Lumidouce Elegy",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "symphonist",
+      "name": "香韵奏者",
+      "name_en": "Symphonist of Scents",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "fractured",
+      "name": "支离轮光",
+      "name_en": "Fractured Halo",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "bloodsoaked",
+      "name": "血染荒城",
+      "name_en": "Bloodsoaked Ruins",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "disaster",
+      "name": "灾悔",
+      "name_en": "Disaster and Remorse",
+      "type": "长柄武器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "prayer",
+      "name": "四风原典",
+      "name_en": "Lost Prayer to the Sacred Winds",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "atlas",
+      "name": "天空之卷",
+      "name_en": "Skyward Atlas",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "dust",
+      "name": "尘世之锁",
+      "name_en": "Memory of Dust",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "moonglow",
+      "name": "不灭月华",
+      "name_en": "Everlasting Moonglow",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "kagura",
+      "name": "神乐之真意",
+      "name_en": "Kagura's Verity",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "dreams",
+      "name": "千夜浮梦",
+      "name_en": "A Thousand Floating Dreams",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "tulay",
+      "name": "图莱杜拉的回忆",
+      "name_en": "Tulaytullah's Remembrance",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "jadefall",
+      "name": "碧落之珑",
+      "name_en": "Jadefall's Splendor",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "tome",
+      "name": "万世流涌大典",
+      "name_en": "Tome of the Eternal Flow",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "cashflow",
+      "name": "金流监督",
+      "name_en": "Cashflow Supervision",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "crane",
+      "name": "鹤鸣余音",
+      "name_en": "Crane's Echoing Call",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "surf",
+      "name": "冲浪时光",
+      "name_en": "Surf's Up",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "starcaller",
+      "name": "祭星者之望",
+      "name_en": "Starcaller's Watch",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "sunny",
+      "name": "寝正月初晴",
+      "name_en": "Sunny Morning Sleep-In",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "vivid",
+      "name": "溢彩心念",
+      "name_en": "Vivid Notions",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "nightweaver",
+      "name": "纺夜天镜",
+      "name_en": "Nightweaver's Looking Glass",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "reliquary",
+      "name": "真语秘匣",
+      "name_en": "Reliquary of Truth",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "nocturne",
+      "name": "帷间夜曲",
+      "name_en": "Nocturne's Curtain Call",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "angelos",
+      "name": "尘光七谕",
+      "name_en": "Angelos' Heptades",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "hymn",
+      "name": "漩流颂歌",
+      "name_en": "Hymn of the Maelstrom",
+      "type": "法器",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "amos",
+      "name": "阿莫斯之弓",
+      "name_en": "Amos' Bow",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "skyharp",
+      "name": "天空之翼",
+      "name_en": "Skyward Harp",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "elegy",
+      "name": "终末嗟叹之诗",
+      "name_en": "Elegy for the End",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "polar",
+      "name": "冬极白星",
+      "name_en": "Polar Star",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "aqua",
+      "name": "若水",
+      "name_en": "Aqua Simulacra",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "hunter",
+      "name": "猎人之径",
+      "name_en": "Hunter's Path",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "firstmagic",
+      "name": "最初的大魔术",
+      "name_en": "The First Great Magic",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "thundering",
+      "name": "飞雷之弦振",
+      "name_en": "Thundering Pulse",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "silvershower",
+      "name": "白雨心弦",
+      "name_en": "Silvershower Heartstrings",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "astral",
+      "name": "星鹫赤羽",
+      "name_en": "Astral Vulture's Crimson Plumage",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "golden",
+      "name": "霜结的誓金枝",
+      "name_en": "Golden Frostbound Oath",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "daybreak",
+      "name": "黎明破晓之史",
+      "name_en": "The Daybreak Chronicles",
+      "type": "弓",
+      "rarity": 5,
+      "quantity": 1,
+      "refinement": 1
+    },
+    {
+      "id": "fav_sword",
+      "name": "西风剑",
+      "name_en": "Favonius Sword",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sac_sword",
+      "name": "祭礼剑",
+      "name_en": "Sacrificial Sword",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "festering",
+      "name": "腐殖之剑",
+      "name_en": "Festering Desire",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "amenoma",
+      "name": "天目影打刀",
+      "name_en": "Amenoma Kageuchi",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "blacksword",
+      "name": "黑剑",
+      "name_en": "The Black Sword",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "blackcliff_sword",
+      "name": "黑岩长剑",
+      "name_en": "Blackcliff Longsword",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "cinnabar",
+      "name": "辰砂之纺锤",
+      "name_en": "Cinnabar Spindle",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "calamity_eshu",
+      "name": "厄水之祸",
+      "name_en": "Calamity of Eshu",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "finale",
+      "name": "海渊终曲",
+      "name_en": "Finale of the Deep",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fleuve",
+      "name": "灰河渡手",
+      "name_en": "Fleuve Cendre Ferryman",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "flute_ez",
+      "name": "息燧之笛",
+      "name_en": "Flute of Ezpitzal",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "ironsting",
+      "name": "铁蜂刺",
+      "name_en": "Iron Sting",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "isshin",
+      "name": "笼钓瓶一心",
+      "name_en": "Kagotsurube Isshin",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "lionsroar",
+      "name": "匣里龙吟",
+      "name_en": "Lion's Roar",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "rancour",
+      "name": "试作斩岩",
+      "name_en": "Prototype Rancour",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "royal_sword",
+      "name": "宗室长剑",
+      "name_en": "Royal Longsword",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sapwood",
+      "name": "原木刀",
+      "name_en": "Sapwood Blade",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sturdy",
+      "name": "弥坚骨",
+      "name_en": "Sturdy Bone",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "descension",
+      "name": "降临之剑",
+      "name_en": "Sword of Descension",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "narzissen",
+      "name": "水仙十字之剑",
+      "name_en": "Sword of Narzissenkreuz",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "alleyflash",
+      "name": "暗巷闪光",
+      "name_en": "The Alley Flash",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "dockhand",
+      "name": "船坞长剑",
+      "name_en": "The Dockhand's Assistant",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "flute",
+      "name": "笛剑",
+      "name_en": "The Flute",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "toukabou",
+      "name": "东花坊时雨",
+      "name_en": "Toukabou Shigure",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "wolffang",
+      "name": "狼牙",
+      "name_en": "Wolf-Fang",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "xiphos",
+      "name": "西福斯的月光",
+      "name_en": "Xiphos' Moonlight",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "heretic",
+      "name": "熔猎异端之刃",
+      "name_en": "Heretic's Molten Blade",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "moonweaver",
+      "name": "织月者的曙色",
+      "name_en": "Moonweaver's Dawn",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "emberwell",
+      "name": "引火之源",
+      "name_en": "Emberwell",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "serenity",
+      "name": "谧音吹哨",
+      "name_en": "Serenity's Call",
+      "type": "单手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fav_claymore",
+      "name": "西风大剑",
+      "name_en": "Favonius Greatsword",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sac_claymore",
+      "name": "祭礼大剑",
+      "name_en": "Sacrificial Greatsword",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "akuoumaru",
+      "name": "恶王丸",
+      "name_en": "Akuoumaru",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "blackcliff_claymore",
+      "name": "黑岩斩刀",
+      "name_en": "Blackcliff Slasher",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "earthshaker",
+      "name": "撼地者",
+      "name_en": "Earth Shaker",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "forest",
+      "name": "森林王器",
+      "name_en": "Forest Regalia",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fruitful",
+      "name": "硕果钩",
+      "name_en": "Fruitful Hook",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "katsuragi",
+      "name": "桂木斩长正",
+      "name_en": "Katsuragikiri Nagamasa",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "lithic_claymore",
+      "name": "千岩古剑",
+      "name_en": "Lithic Blade",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sealord",
+      "name": "衔珠海皇",
+      "name_en": "Luxurious Sea-Lord",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "mailed",
+      "name": "饰铁之花",
+      "name_en": "Mailed Flower",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "makhaira",
+      "name": "玛海菈的水色",
+      "name_en": "Makhaira Aquamarine",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "saw",
+      "name": "便携动力锯",
+      "name_en": "Portable Power Saw",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "archaic",
+      "name": "试作古华",
+      "name_en": "Prototype Archaic",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "rainslasher",
+      "name": "雨裁",
+      "name_en": "Rainslasher",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "royal_claymore",
+      "name": "宗室大剑",
+      "name_en": "Royal Greatsword",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "serpent",
+      "name": "螭骨剑",
+      "name_en": "Serpent Spine",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "snowtomb",
+      "name": "雪葬的星银",
+      "name_en": "Snow-Tombed Starsilver",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "talking",
+      "name": "聊聊棒",
+      "name_en": "Talking Stick",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "bell",
+      "name": "钟剑",
+      "name_en": "The Bell",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "tidalshadow",
+      "name": "浪影阔剑",
+      "name_en": "Tidal Shadow",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "mega",
+      "name": "究极霸王超级魔剑",
+      "name_en": "Ultimate Overlord's Mega Magic Sword",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "whiteblind",
+      "name": "白影剑",
+      "name_en": "Whiteblind",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "flameforged",
+      "name": "拾慧铸熔",
+      "name_en": "Flame-Forged Insight",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "masterkey",
+      "name": "万能钥匙",
+      "name_en": "Master Key",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "atonement",
+      "name": "救赎之斩",
+      "name_en": "Blade of Atonement",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "goldenmelody",
+      "name": "金律铸影",
+      "name_en": "Forged by the Golden Melody",
+      "type": "双手剑",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "songvigil",
+      "name": "戍望谣歌",
+      "name_en": "Song of the Vigil",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fav_lance",
+      "name": "西风长枪",
+      "name_en": "Favonius Lance",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "catch",
+      "name": "渔获",
+      "name_en": "The Catch",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fjords",
+      "name": "峡湾长歌",
+      "name_en": "Ballad of the Fjords",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "blackcliff_lance",
+      "name": "黑岩刺枪",
+      "name_en": "Blackcliff Pole",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "crescent",
+      "name": "流月针",
+      "name_en": "Crescent Pike",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "deathmatch",
+      "name": "决斗之枪",
+      "name_en": "Deathmatch",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "dialogues",
+      "name": "沙中伟贤的对答",
+      "name_en": "Dialogues of the Desert Sages",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "dragonsbane",
+      "name": "匣里灭辰",
+      "name_en": "Dragon's Bane",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "dragonspine",
+      "name": "龙脊长枪",
+      "name_en": "Dragonspine Spear",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "rainbow",
+      "name": "虹的行迹",
+      "name_en": "Footprint of the Rainbow",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "kitain",
+      "name": "喜多院十文字",
+      "name_en": "Kitain Cross Spear",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "lithic_lance",
+      "name": "千岩长枪",
+      "name_en": "Lithic Spear",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "missive",
+      "name": "风信之锋",
+      "name_en": "Missive Windspear",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "moonpiercer",
+      "name": "贯月矢",
+      "name_en": "Moonpiercer",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "mountain",
+      "name": "镇山之钉",
+      "name_en": "Mountain-Bracing Bolt",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "drill",
+      "name": "勘探钻机",
+      "name_en": "Prospector's Drill",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "starglitter",
+      "name": "试作星镰",
+      "name_en": "Prototype Starglitter",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "rightful",
+      "name": "公义的酬报",
+      "name_en": "Rightful Reward",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "royal_lance",
+      "name": "宗室猎枪",
+      "name_en": "Royal Spear",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "tamayura",
+      "name": "且住亭御咄",
+      "name_en": "Tamayuratei no Ohanashi",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "wavebreaker",
+      "name": "断浪长鳍",
+      "name_en": "Wavebreaker's Fin",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sacrificer",
+      "name": "圣祭者的辉杖",
+      "name_en": "Sacrificer's Staff",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "shovel",
+      "name": "掘金之锹",
+      "name_en": "Prospector's Shovel",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "frostbreath",
+      "name": "寒息",
+      "name_en": "Frostbreath",
+      "type": "长柄武器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "clash",
+      "name": "群王局戏",
+      "name_en": "Clash of Kings",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fav_codex",
+      "name": "西风秘典",
+      "name_en": "Favonius Codex",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sac_frag",
+      "name": "祭礼残章",
+      "name_en": "Sacrificial Fragments",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "ashhorn",
+      "name": "苍纹角杯",
+      "name_en": "Ash-Graven Drinking Horn",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "balladblue",
+      "name": "无垠蔚蓝之歌",
+      "name_en": "Ballad of the Boundless Blue",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "blackcliff_catalyst",
+      "name": "黑岩绯玉",
+      "name_en": "Blackcliff Agate",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "dodoco",
+      "name": "嘟嘟可故事集",
+      "name_en": "Dodoco Tales",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "eye",
+      "name": "昭心",
+      "name_en": "Eye of Perception",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "flowing",
+      "name": "纯水流华",
+      "name_en": "Flowing Purity",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "frostbearer",
+      "name": "忍冬之果",
+      "name_en": "Frostbearer",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fruit",
+      "name": "盈满之实",
+      "name_en": "Fruit of Fulfillment",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "hakushin",
+      "name": "白辰之环",
+      "name_en": "Hakushin Ring",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "mappa",
+      "name": "万国诸海图谱",
+      "name_en": "Mappa Mare",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "oathsworn",
+      "name": "证誓之明瞳",
+      "name_en": "Oathsworn Eye",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "amber",
+      "name": "试作金珀",
+      "name_en": "Prototype Amber",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "yaxche",
+      "name": "木棉之环",
+      "name_en": "Ring of Yaxche",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "royal_catalyst",
+      "name": "宗室秘法录",
+      "name_en": "Royal Grimoire",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sac_jade",
+      "name": "遗祀玉珑",
+      "name_en": "Sacrificial Jade",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "solar",
+      "name": "匣里日月",
+      "name_en": "Solar Pearl",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "widsith",
+      "name": "流浪乐章",
+      "name_en": "The Widsith",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "evenstar",
+      "name": "流浪的晚星",
+      "name_en": "Wandering Evenstar",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "waveriding",
+      "name": "乘浪的回旋",
+      "name_en": "Waveriding Whirl",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "winesong",
+      "name": "暗巷的酒与诗",
+      "name_en": "Wine and Song",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "blackmarrow",
+      "name": "乌髓孑灯",
+      "name_en": "Blackmarrow Lantern",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "etherlight",
+      "name": "天光的纺琴",
+      "name_en": "Etherlight Spindlelute",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "dawning",
+      "name": "霜辰",
+      "name_en": "Dawning Frost",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "echoes",
+      "name": "寸心余响",
+      "name_en": "Echoes of the Heart",
+      "type": "法器",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fav_bow",
+      "name": "西风猎弓",
+      "name_en": "Favonius Warbow",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sac_bow",
+      "name": "祭礼弓",
+      "name_en": "Sacrificial Bow",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "alleyhunter",
+      "name": "暗巷猎手",
+      "name_en": "Alley Hunter",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "blackcliff_bow",
+      "name": "黑岩战弓",
+      "name_en": "Blackcliff Warbow",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "chainbreaker",
+      "name": "碎链",
+      "name_en": "Chain Breaker",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "cloudforged",
+      "name": "筑云",
+      "name_en": "Cloudforged",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "compound",
+      "name": "钢轮弓",
+      "name_en": "Compound Bow",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "endline",
+      "name": "竭泽",
+      "name_en": "End of the Line",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "fading",
+      "name": "落霞",
+      "name_en": "Fading Twilight",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "flowerfeather",
+      "name": "缀花之翎",
+      "name_en": "Flower-Wreathed Feathers",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "hamayumi",
+      "name": "破魔之弓",
+      "name_en": "Hamayumi",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "ibis",
+      "name": "鹮穿之喙",
+      "name_en": "Ibis Piercer",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "kingsquire",
+      "name": "王下近侍",
+      "name_en": "King's Squire",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "mitternacht",
+      "name": "幽夜华尔兹",
+      "name_en": "Mitternachts Waltz",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "mouun",
+      "name": "曚云之月",
+      "name_en": "Mouun's Moon",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "predator",
+      "name": "掠食者",
+      "name_en": "Predator",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "crescent_bow",
+      "name": "试作澹月",
+      "name_en": "Prototype Crescent",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "rainsbow",
+      "name": "虹蛇的雨弦",
+      "name_en": "Rainbow Serpent's Rain Bow",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "rangegauge",
+      "name": "测距规",
+      "name_en": "Range Gauge",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "royal_bow",
+      "name": "宗室长弓",
+      "name_en": "Royal Bow",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "rust",
+      "name": "弓藏",
+      "name_en": "Rust",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "scion",
+      "name": "烈阳之嗣",
+      "name_en": "Scion of the Blazing Sun",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "sequence",
+      "name": "冷寂迸音",
+      "name_en": "Sequence of Solitude",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "songstill",
+      "name": "静谧之曲",
+      "name_en": "Song of Stillness",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "stringless",
+      "name": "绝弦",
+      "name_en": "The Stringless",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "viridescent",
+      "name": "苍翠猎弓",
+      "name_en": "The Viridescent Hunt",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "windblume",
+      "name": "风花之颂",
+      "name_en": "Windblume Ode",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "snare",
+      "name": "罗网勾针",
+      "name_en": "Snare Hook",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "jadevista",
+      "name": "悬黎千钧",
+      "name_en": "Jade Vista",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    },
+    {
+      "id": "covenant",
+      "name": "霜雪誓约",
+      "name_en": "Covenant of Frost and Snow",
+      "type": "弓",
+      "rarity": 4,
+      "quantity": 2,
+      "refinement": 5
+    }
+  ],
+  "characters": [
+    {
+      "id": "vesna",
+      "name": "薇斯纳",
+      "type": "单手剑",
+      "role": "星扩散站场输出",
+      "notes": "7.1新角色；初步推荐；高暴击率配置注意溢出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "chrysalis": 100,
+        "whitelake": 94,
+        "foliar": 89,
+        "absolution": 89,
+        "uraku": 87,
+        "azure": 86,
+        "jadecutter": 84,
+        "emberwell": 84,
+        "freedom": 83,
+        "heretic": 79,
+        "finale": 77,
+        "wolffang": 77
+      },
+      "sources": [
+        {
+          "url": "https://www.icy-veins.com/genshin-impact/vesna-guide-best-builds",
+          "scope": "已阅读初步攻略；资料仍可能调整；没有移植该页面的DPS百分比。"
+        }
+      ],
+      "review": "新角色初步资料"
+    },
+    {
+      "id": "odette",
+      "name": "奥黛塔",
+      "type": "单手剑",
+      "role": "星爍队后台输出/辅助",
+      "notes": "以星爍队为前提；海渊终曲需清除生命之契。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "whitelake": 100,
+        "chrysalis": 96,
+        "azure": 91,
+        "jadecutter": 91,
+        "uraku": 90,
+        "foliar": 90,
+        "mist": 89,
+        "absolution": 89,
+        "haran": 88,
+        "athame": 87,
+        "lightbearing": 87,
+        "splendor": 87,
+        "exaiphanes": 86,
+        "summit": 85,
+        "finale": 83,
+        "aquila": 82,
+        "emberwell": 80
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/odette-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "traveler",
+      "name": "旅行者（冰）",
+      "type": "单手剑",
+      "role": "冰后台/星爍辅助",
+      "notes": "只占一个角色位；元素切换后必须重设角色定位和评分。此行未经独立DPS核算。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "exaiphanes": 100,
+        "whitelake": 95,
+        "chrysalis": 93,
+        "fav_sword": 90,
+        "festering": 86,
+        "fleuve": 86,
+        "emberwell": 84,
+        "skyblade": 84,
+        "sac_sword": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "zibai",
+      "name": "兹白",
+      "type": "单手剑",
+      "role": "防御月结晶站场输出",
+      "notes": "防御与月结晶定位，不按传统普攻剑角色评分。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "lightbearing": 100,
+        "uraku": 90,
+        "peak": 85,
+        "foliar": 82,
+        "splendor": 81,
+        "flute_ez": 80,
+        "jadecutter": 77,
+        "cinnabar": 75
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/zibai-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "durin",
+      "name": "杜林",
+      "type": "单手剑",
+      "role": "后台火输出/辅助",
+      "notes": "默认队内有另一位魔导角色，满足专武相关条件。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "athame": 100,
+        "freedom": 95,
+        "jadecutter": 94,
+        "mist": 94,
+        "haran": 93,
+        "azure": 91,
+        "absolution": 90,
+        "wolffang": 87,
+        "whitelake": 86,
+        "fav_sword": 86,
+        "exaiphanes": 85,
+        "lionsroar": 85,
+        "moonweaver": 85,
+        "xiphos": 84,
+        "finale": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/durin-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "dahlia",
+      "name": "塔利雅",
+      "type": "单手剑",
+      "role": "护盾/普攻队辅助",
+      "notes": "优先生命与循环；西风需前台触发暴击。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "key": 100,
+        "fav_sword": 96,
+        "serenity": 94,
+        "dockhand": 92,
+        "sac_sword": 89,
+        "fleuve": 88,
+        "skyblade": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "skirk",
+      "name": "丝柯克",
+      "type": "单手剑",
+      "role": "冰站场输出",
+      "notes": "限定水冰队基线；不把元素充能当作常规输出主属性。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "azure": 100,
+        "mist": 91,
+        "haran": 88,
+        "jadecutter": 87,
+        "absolution": 87,
+        "uraku": 86,
+        "finale": 82,
+        "blacksword": 80
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "xilonen",
+      "name": "希诺宁",
+      "type": "单手剑",
+      "role": "减抗/治疗/增伤辅助",
+      "notes": "岩峰需触发普攻条件，且防御达到相应增益需求。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "peak": 100,
+        "fav_sword": 88,
+        "freedom": 86,
+        "flute_ez": 85,
+        "cinnabar": 79,
+        "sac_sword": 78
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "clorinde",
+      "name": "克洛琳德",
+      "type": "单手剑",
+      "role": "雷站场输出",
+      "notes": "激化基线；普通命之座，非速切核爆。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "absolution": 100,
+        "chrysalis": 96,
+        "haran": 93,
+        "mist": 92,
+        "jadecutter": 90,
+        "foliar": 89,
+        "blacksword": 85,
+        "finale": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "chiori",
+      "name": "千织",
+      "type": "单手剑",
+      "role": "岩后台输出",
+      "notes": "默认可满足岩队相关条件；并非所有单岩队等价。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "uraku": 100,
+        "lightbearing": 94,
+        "jadecutter": 89,
+        "foliar": 87,
+        "cinnabar": 85,
+        "flute_ez": 83,
+        "mist": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "furina",
+      "name": "芙宁娜",
+      "type": "单手剑",
+      "role": "水后台/增伤",
+      "notes": "假设队伍治疗和圣遗物能满足生命、循环；高充能需求时重评。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "splendor": 100,
+        "key": 96,
+        "jadecutter": 94,
+        "festering": 94,
+        "fleuve": 91,
+        "serenity": 90,
+        "fav_sword": 89,
+        "skyblade": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "lynette",
+      "name": "琳妮特",
+      "type": "单手剑",
+      "role": "后台风/减抗辅助",
+      "notes": "以循环与团队功能优先，非六命站场输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "freedom": 100,
+        "fav_sword": 97,
+        "sac_sword": 92,
+        "skyblade": 90,
+        "fleuve": 89,
+        "finale": 83,
+        "amenoma": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kirara",
+      "name": "绮良良",
+      "type": "单手剑",
+      "role": "护盾/草辅助",
+      "notes": "生命护盾定位；圣显叠层需适配操作。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "key": 100,
+        "dockhand": 96,
+        "fav_sword": 91,
+        "serenity": 91,
+        "sac_sword": 89,
+        "xiphos": 87,
+        "sapwood": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "alhaitham",
+      "name": "艾尔海森",
+      "type": "单手剑",
+      "role": "蔓激化站场输出",
+      "notes": "草雷激化；需按实际充能与精通重新配平圣遗物。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "foliar": 100,
+        "jadecutter": 94,
+        "mist": 92,
+        "uraku": 92,
+        "haran": 89,
+        "wolffang": 88,
+        "freedom": 85,
+        "ironsting": 82,
+        "toukabou": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "layla",
+      "name": "莱依拉",
+      "type": "单手剑",
+      "role": "护盾/冰后台",
+      "notes": "以护盾和循环为主，不按纯爆发输出评分。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "key": 100,
+        "dockhand": 94,
+        "fav_sword": 94,
+        "serenity": 91,
+        "sac_sword": 87,
+        "fleuve": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "nilou",
+      "name": "妮露",
+      "type": "单手剑",
+      "role": "丰穰之核辅助",
+      "notes": "水草限定绽放队；优先生命而非直伤双暴。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "key": 100,
+        "dockhand": 80,
+        "serenity": 78,
+        "jadecutter": 76,
+        "freedom": 74,
+        "xiphos": 72,
+        "ironsting": 70
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kuki",
+      "name": "久岐忍",
+      "type": "单手剑",
+      "role": "超绽放触发/治疗",
+      "notes": "精通触发定位；不是物理或纯治疗。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "key": 100,
+        "freedom": 99,
+        "xiphos": 96,
+        "ironsting": 94,
+        "toukabou": 94,
+        "sapwood": 85,
+        "dockhand": 78
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "ayato",
+      "name": "神里绫人",
+      "type": "单手剑",
+      "role": "水站场输出",
+      "notes": "常规普攻输出，非纯后台挂水。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "haran": 100,
+        "jadecutter": 96,
+        "mist": 95,
+        "uraku": 89,
+        "azure": 89,
+        "blacksword": 88,
+        "finale": 86,
+        "isshin": 81
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "ayaka",
+      "name": "神里绫华",
+      "type": "单手剑",
+      "role": "冻结站场/爆发输出",
+      "notes": "冻结基线，冰套暴击不要溢出；天目适合补循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "mist": 100,
+        "whitelake": 95,
+        "chrysalis": 93,
+        "haran": 90,
+        "jadecutter": 88,
+        "summit": 88,
+        "finale": 85,
+        "amenoma": 84,
+        "blacksword": 76
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kazuha",
+      "name": "枫原万叶",
+      "type": "单手剑",
+      "role": "精通风辅助",
+      "notes": "需要稳定扩散且循环达标；高充能需求会提高西福斯/西风评分。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "freedom": 100,
+        "xiphos": 98,
+        "fav_sword": 94,
+        "sac_sword": 91,
+        "ironsting": 89,
+        "toukabou": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "albedo",
+      "name": "阿贝多",
+      "type": "单手剑",
+      "role": "防御岩后台输出",
+      "notes": "优先战技后台输出；如改用团队增伤方案，重评岩峰。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "uraku": 100,
+        "peak": 96,
+        "lightbearing": 94,
+        "cinnabar": 93,
+        "foliar": 85,
+        "jadecutter": 84,
+        "flute_ez": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "bennett",
+      "name": "班尼特",
+      "type": "单手剑",
+      "role": "增攻/治疗辅助",
+      "notes": "优先基础攻击与循环；圣遗物攻击百分比不提高增攻白值。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "mist": 100,
+        "azure": 100,
+        "absolution": 99,
+        "chrysalis": 99,
+        "whitelake": 99,
+        "aquila": 98,
+        "skyblade": 95,
+        "alleyflash": 92,
+        "sapwood": 90,
+        "fav_sword": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/bennett-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "jean",
+      "name": "琴",
+      "type": "单手剑",
+      "role": "群体治疗/风辅助",
+      "notes": "常规治疗减抗，非日炎精通方案；高ER需调整。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "freedom": 100,
+        "fav_sword": 97,
+        "skyblade": 95,
+        "amenoma": 93,
+        "fleuve": 91,
+        "sac_sword": 90,
+        "aquila": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kaeya",
+      "name": "凯亚",
+      "type": "单手剑",
+      "role": "融化后台输出",
+      "notes": "有稳定火底的反向融化基线；并非冻结通用最优。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "mist": 100,
+        "jadecutter": 97,
+        "foliar": 94,
+        "uraku": 91,
+        "haran": 90,
+        "lionsroar": 88,
+        "wolffang": 87,
+        "finale": 86,
+        "skyblade": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "keqing",
+      "name": "刻晴",
+      "type": "单手剑",
+      "role": "激化站场输出",
+      "notes": "稳定雷草激化；匣里龙吟需要雷附着覆盖。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "mist": 100,
+        "jadecutter": 96,
+        "foliar": 94,
+        "haran": 92,
+        "uraku": 90,
+        "lionsroar": 90,
+        "blacksword": 88,
+        "wolffang": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "qiqi",
+      "name": "七七",
+      "type": "单手剑",
+      "role": "治疗/战技覆盖",
+      "notes": "常规治疗辅助，祭礼可改善战技覆盖；非物理主C。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "sac_sword": 100,
+        "fav_sword": 94,
+        "skyblade": 91,
+        "aquila": 90,
+        "amenoma": 88,
+        "flute": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "xingqiu",
+      "name": "行秋",
+      "type": "单手剑",
+      "role": "水后台输出/挂水",
+      "notes": "默认六命且双水或有足够充能，允许输出剑；单水高ER应上调祭礼/西风。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "jadecutter": 100,
+        "mist": 97,
+        "wolffang": 94,
+        "sac_sword": 94,
+        "haran": 93,
+        "fav_sword": 93,
+        "skyblade": 92,
+        "fleuve": 90,
+        "lionsroar": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "sandrone",
+      "name": "桑多涅",
+      "type": "双手剑",
+      "role": "星超导站场输出",
+      "notes": "需要队伍提供对应反应；救赎之斩需本人触发被动。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "teaspoon": 100,
+        "suns": 95,
+        "atonement": 94,
+        "beacon": 92,
+        "goldenmelody": 90,
+        "redhorn": 88,
+        "wolf": 87,
+        "verdict": 86,
+        "tidalshadow": 85,
+        "unforged": 84,
+        "mailed": 83,
+        "serpent": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/sandrone-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "varka",
+      "name": "法尔伽",
+      "type": "双手剑",
+      "role": "风站场输出",
+      "notes": "动画持双剑仍只装备一把双手剑；队伍满足双元素/魔导配置。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "gest": 100,
+        "suns": 93,
+        "beacon": 91,
+        "redhorn": 90,
+        "teaspoon": 90,
+        "serpent": 90,
+        "verdict": 87,
+        "wolf": 86,
+        "unforged": 85,
+        "fang": 84,
+        "tidalshadow": 81,
+        "talking": 80
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/varka-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "aino",
+      "name": "爱诺",
+      "type": "双手剑",
+      "role": "后台水/团队充能",
+      "notes": "个人直伤占比低，优先团队充能或精通辅助。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_claymore": 100,
+        "sac_claymore": 94,
+        "makhaira": 93,
+        "forest": 92,
+        "masterkey": 92,
+        "flameforged": 91,
+        "katsuragi": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/aino-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "mavuika",
+      "name": "玛薇卡",
+      "type": "双手剑",
+      "role": "火站场爆发输出",
+      "notes": "站场融化/蒸发定位，非仅后台挂火。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "suns": 100,
+        "beacon": 91,
+        "redhorn": 90,
+        "serpent": 88,
+        "wolf": 85,
+        "unforged": 84,
+        "tidalshadow": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kinich",
+      "name": "基尼奇",
+      "type": "双手剑",
+      "role": "燃烧队站场输出",
+      "notes": "燃烧稳定触发；不是无火队。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fang": 100,
+        "suns": 93,
+        "beacon": 92,
+        "verdict": 91,
+        "serpent": 88,
+        "earthshaker": 87,
+        "wolf": 86,
+        "tidalshadow": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "gaming",
+      "name": "嘉明",
+      "type": "双手剑",
+      "role": "蒸发下落输出",
+      "notes": "默认有治疗、稳定蒸发；硕果钩为下落专用候选。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fruitful": 100,
+        "redhorn": 99,
+        "suns": 99,
+        "beacon": 98,
+        "rainslasher": 96,
+        "serpent": 93,
+        "mailed": 92,
+        "tidalshadow": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "navia",
+      "name": "娜维娅",
+      "type": "双手剑",
+      "role": "结晶站场/速切输出",
+      "notes": "默认有队友提供晶片；螭骨需要维持层数。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "verdict": 100,
+        "serpent": 94,
+        "beacon": 94,
+        "suns": 92,
+        "redhorn": 91,
+        "wolf": 89,
+        "unforged": 89,
+        "tidalshadow": 86,
+        "mega": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "freminet",
+      "name": "菲米尼",
+      "type": "双手剑",
+      "role": "物理站场输出",
+      "notes": "默认物理/碎冰路线，不是纯冰输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "beacon": 100,
+        "pines": 98,
+        "wolf": 94,
+        "skypride": 93,
+        "redhorn": 92,
+        "serpent": 92,
+        "snowtomb": 85,
+        "archaic": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "dehya",
+      "name": "迪希雅",
+      "type": "双手剑",
+      "role": "抗打断/后台辅助",
+      "notes": "非站场爆发；本角色位优先西风功能与生命。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_claymore": 100,
+        "sac_claymore": 94,
+        "beacon": 93,
+        "bell": 90,
+        "mega": 86,
+        "forest": 86,
+        "masterkey": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kaveh",
+      "name": "卡维",
+      "type": "双手剑",
+      "role": "绽放站场驾驶",
+      "notes": "需要稳定循环，优先充能；并非蔓激化双暴主C。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_claymore": 100,
+        "sac_claymore": 98,
+        "mailed": 96,
+        "flameforged": 95,
+        "forest": 94,
+        "makhaira": 94,
+        "masterkey": 92,
+        "katsuragi": 92
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "dori",
+      "name": "多莉",
+      "type": "双手剑",
+      "role": "治疗/充能辅助",
+      "notes": "治疗并给队友回能，非站场激化六命输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_claymore": 100,
+        "sac_claymore": 94,
+        "katsuragi": 93,
+        "bell": 89,
+        "forest": 88,
+        "masterkey": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "itto",
+      "name": "荒泷一斗",
+      "type": "双手剑",
+      "role": "防御岩站场输出",
+      "notes": "岩队基线；螭骨维持层数，白影需要叠层。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "redhorn": 100,
+        "serpent": 90,
+        "whiteblind": 84,
+        "beacon": 82,
+        "skypride": 80
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "sayu",
+      "name": "早柚",
+      "type": "双手剑",
+      "role": "精通治疗/风辅助",
+      "notes": "默认六命，精通能兼顾扩散与治疗。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_claymore": 100,
+        "mailed": 96,
+        "makhaira": 95,
+        "katsuragi": 93,
+        "sac_claymore": 93,
+        "rainslasher": 92,
+        "forest": 92
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "noelle",
+      "name": "诺艾尔",
+      "type": "双手剑",
+      "role": "防御岩站场/治疗",
+      "notes": "六命站场基线，优先循环与防御转攻。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "redhorn": 100,
+        "serpent": 93,
+        "whiteblind": 89,
+        "skypride": 85,
+        "fav_claymore": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "xinyan",
+      "name": "辛焱",
+      "type": "双手剑",
+      "role": "物理爆发输出",
+      "notes": "六命物理路线；非纯护盾辅助。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "redhorn": 100,
+        "pines": 96,
+        "beacon": 96,
+        "wolf": 94,
+        "skypride": 94,
+        "akuoumaru": 93,
+        "serpent": 92,
+        "sealord": 90,
+        "snowtomb": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "eula",
+      "name": "优菈",
+      "type": "双手剑",
+      "role": "物理站场/爆发",
+      "notes": "需保证爆发充能，不能按展示面板忽略循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "pines": 100,
+        "beacon": 98,
+        "wolf": 94,
+        "unforged": 93,
+        "redhorn": 92,
+        "serpent": 89,
+        "skypride": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "razor",
+      "name": "雷泽",
+      "type": "双手剑",
+      "role": "物理站场输出",
+      "notes": "保留物理玩法基线；不代表7.1反应/魔导玩法最优。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "beacon": 100,
+        "pines": 99,
+        "wolf": 97,
+        "redhorn": 94,
+        "serpent": 93,
+        "skypride": 91,
+        "snowtomb": 86,
+        "archaic": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "beidou",
+      "name": "北斗",
+      "type": "双手剑",
+      "role": "雷后台爆发输出",
+      "notes": "双雷/弹反供能基线，优先充能达标再输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "serpent": 100,
+        "wolf": 99,
+        "akuoumaru": 98,
+        "beacon": 96,
+        "skypride": 96,
+        "sealord": 93,
+        "mega": 93,
+        "tidalshadow": 91
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "chongyun",
+      "name": "重云",
+      "type": "双手剑",
+      "role": "融化速切爆发",
+      "notes": "按反向融化爆发，非站场冰普攻。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "beacon": 100,
+        "serpent": 98,
+        "wolf": 97,
+        "akuoumaru": 96,
+        "redhorn": 95,
+        "rainslasher": 92,
+        "mailed": 91,
+        "sealord": 91,
+        "skypride": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "diluc",
+      "name": "迪卢克",
+      "type": "双手剑",
+      "role": "蒸发站场输出",
+      "notes": "常规蒸发定位，非闲云下落特化；有稳定治疗。采用无工之剑时默认有护盾，且满足叠层；无盾需下调评分。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "beacon": 100,
+        "suns": 99,
+        "redhorn": 98,
+        "serpent": 96,
+        "wolf": 95,
+        "unforged": 94,
+        "rainslasher": 94,
+        "mailed": 90,
+        "tidalshadow": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "alyosha",
+      "name": "阿罗夏",
+      "type": "长柄武器",
+      "role": "雷治疗/星爍辅助",
+      "notes": "主看循环与团队收益；寒息需要对应反应条件。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "symphonist": 100,
+        "fav_lance": 99,
+        "frostbreath": 97,
+        "engulf": 93,
+        "skyspine": 92,
+        "catch": 91,
+        "mountain": 91,
+        "starglitter": 89,
+        "tamayura": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/alyosha-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "lohen",
+      "name": "洛恩",
+      "type": "长柄武器",
+      "role": "冰站场输出",
+      "notes": "基础按冰直伤，非融化特化；不强行放大精通价值。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "disaster": 100,
+        "jadewing": 94,
+        "crimson": 93,
+        "homa": 92,
+        "lumidouce": 91,
+        "symphonist": 91,
+        "calamity": 90,
+        "fractured": 89,
+        "bloodsoaked": 89,
+        "deathmatch": 87,
+        "drill": 85,
+        "fjords": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/lohen-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "illuga",
+      "name": "叶洛亚",
+      "type": "长柄武器",
+      "role": "精通岩/月结晶辅助",
+      "notes": "精通增益定位；圣遗物先解决循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "dragonsbane": 100,
+        "kitain": 97,
+        "fav_lance": 97,
+        "moonpiercer": 90,
+        "fjords": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/illuga-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "flins",
+      "name": "菲林斯",
+      "type": "长柄武器",
+      "role": "月感电站场输出",
+      "notes": "按月感电配置；被动与能量机制需要适配。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "bloodsoaked": 100,
+        "scarlet": 94,
+        "fractured": 91,
+        "homa": 91,
+        "symphonist": 89,
+        "lumidouce": 89,
+        "jadewing": 88,
+        "deathmatch": 86,
+        "vortex": 85,
+        "fjords": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/flins-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "ineffa",
+      "name": "伊涅芙",
+      "type": "长柄武器",
+      "role": "月感电后台/护盾",
+      "notes": "护盾与反应后台输出基线。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fractured": 100,
+        "scarlet": 92,
+        "homa": 90,
+        "lumidouce": 90,
+        "calamity": 89,
+        "deathmatch": 87,
+        "fjords": 87,
+        "missive": 84,
+        "kitain": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "escoffier",
+      "name": "爱可菲",
+      "type": "长柄武器",
+      "role": "冰后台/治疗",
+      "notes": "水冰队基线；攻击与后台伤害兼顾。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "symphonist": 100,
+        "calamity": 93,
+        "lumidouce": 92,
+        "homa": 90,
+        "engulf": 89,
+        "deathmatch": 87,
+        "fav_lance": 86,
+        "skyspine": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "iansan",
+      "name": "伊安珊",
+      "type": "长柄武器",
+      "role": "攻击增益/治疗",
+      "notes": "运动队辅助，优先自身循环和增攻需求。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "symphonist": 100,
+        "fav_lance": 98,
+        "engulf": 95,
+        "skyspine": 95,
+        "tamayura": 94,
+        "calamity": 94,
+        "mountain": 93,
+        "starglitter": 91,
+        "rightful": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kachina",
+      "name": "卡齐娜",
+      "type": "长柄武器",
+      "role": "岩后台/烬城辅助",
+      "notes": "防御输出兼团队增益，非站场物理。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_lance": 100,
+        "rainbow": 97,
+        "mountain": 88,
+        "skyspine": 85,
+        "starglitter": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "emilie",
+      "name": "艾梅莉埃",
+      "type": "长柄武器",
+      "role": "燃烧后台输出",
+      "notes": "持续燃烧为前提。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "lumidouce": 100,
+        "calamity": 92,
+        "homa": 91,
+        "scarlet": 89,
+        "deathmatch": 87,
+        "jadewing": 86,
+        "missive": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "arlecchino",
+      "name": "阿蕾奇诺",
+      "type": "长柄武器",
+      "role": "火站场输出",
+      "notes": "常规生命之契输出定位，不兼任治疗。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "crimson": 100,
+        "jadewing": 93,
+        "homa": 92,
+        "scarlet": 91,
+        "deathmatch": 87,
+        "calamity": 85,
+        "fjords": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "chevreuse",
+      "name": "夏沃蕾",
+      "type": "长柄武器",
+      "role": "超载增攻/治疗",
+      "notes": "火雷队辅助，生命达到增益门槛后优先循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "dialogues": 100,
+        "symphonist": 99,
+        "rightful": 98,
+        "fav_lance": 97,
+        "starglitter": 87,
+        "skyspine": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "mika",
+      "name": "米卡",
+      "type": "长柄武器",
+      "role": "治疗/物理辅助",
+      "notes": "循环优先；治疗回能类武器需触发被动。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_lance": 100,
+        "dialogues": 99,
+        "rightful": 98,
+        "skyspine": 94,
+        "starglitter": 93,
+        "mountain": 92
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "yaoyao",
+      "name": "瑶瑶",
+      "type": "长柄武器",
+      "role": "草治疗/辅助",
+      "notes": "以治疗、挂草和循环为主，不是蔓激化输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_lance": 100,
+        "dialogues": 98,
+        "rightful": 96,
+        "moonpiercer": 94,
+        "kitain": 93,
+        "starglitter": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "candace",
+      "name": "坎蒂丝",
+      "type": "长柄武器",
+      "role": "挂水/普攻增益",
+      "notes": "默认六命后台挂水，需保证循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_lance": 100,
+        "rightful": 94,
+        "starglitter": 93,
+        "dialogues": 92,
+        "skyspine": 91,
+        "catch": 91
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "cyno",
+      "name": "赛诺",
+      "type": "长柄武器",
+      "role": "激绽站场输出",
+      "notes": "草水雷激绽；精通和暴击均有效。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "scarlet": 100,
+        "jadewing": 90,
+        "fjords": 90,
+        "homa": 89,
+        "deathmatch": 88,
+        "kitain": 83,
+        "dragonsbane": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "shenhe",
+      "name": "申鹤",
+      "type": "长柄武器",
+      "role": "冰翎增伤辅助",
+      "notes": "优先攻击并满足爆发循环；不按自身双暴输出评分。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "calamity": 100,
+        "engulf": 95,
+        "skyspine": 94,
+        "fav_lance": 94,
+        "vortex": 92,
+        "wavebreaker": 88,
+        "tamayura": 88,
+        "missive": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "yunjin",
+      "name": "云堇",
+      "type": "长柄武器",
+      "role": "防御普攻增益",
+      "notes": "防御堆叠与循环，西风需要一定暴击。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_lance": 100,
+        "rainbow": 95,
+        "starglitter": 93,
+        "mountain": 92,
+        "skyspine": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "thoma",
+      "name": "托马",
+      "type": "长柄武器",
+      "role": "烈绽放触发",
+      "notes": "精通烈绽放而非纯护盾；优先满足循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "kitain": 100,
+        "dragonsbane": 97,
+        "moonpiercer": 92,
+        "fjords": 91,
+        "fav_lance": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "raiden",
+      "name": "雷电将军",
+      "type": "长柄武器",
+      "role": "雷站场爆发/充能",
+      "notes": "按直伤雷神，不是超绽放精通雷神。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "engulf": 100,
+        "homa": 91,
+        "jadewing": 90,
+        "skyspine": 90,
+        "catch": 90,
+        "wavebreaker": 89,
+        "deathmatch": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/raiden-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "hutao",
+      "name": "胡桃",
+      "type": "长柄武器",
+      "role": "蒸发站场输出",
+      "notes": "常规压血蒸发，队伍与生命管理满足护摩条件。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "homa": 100,
+        "scarlet": 93,
+        "fjords": 92,
+        "dragonsbane": 91,
+        "deathmatch": 89,
+        "jadewing": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "xiao",
+      "name": "魈",
+      "type": "长柄武器",
+      "role": "风下落站场输出",
+      "notes": "对单/对群通用下落，循环须由队伍和圣遗物满足。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "jadewing": 100,
+        "homa": 98,
+        "calamity": 93,
+        "symphonist": 92,
+        "fractured": 91,
+        "vortex": 91,
+        "deathmatch": 89,
+        "skyspine": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "rosaria",
+      "name": "罗莎莉亚",
+      "type": "长柄武器",
+      "role": "反向融化后台输出",
+      "notes": "火底融化，非冻结暴击拐；匣里被动需火覆盖。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "scarlet": 100,
+        "homa": 97,
+        "deathmatch": 95,
+        "dragonsbane": 95,
+        "catch": 94,
+        "wavebreaker": 93,
+        "jadewing": 92,
+        "skyspine": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "zhongli",
+      "name": "钟离",
+      "type": "长柄武器",
+      "role": "护盾/团队辅助",
+      "notes": "本版本默认只用四五星，未加入三星黑缨枪。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_lance": 100,
+        "homa": 94,
+        "dialogues": 91,
+        "rightful": 91,
+        "vortex": 87,
+        "starglitter": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "xiangling",
+      "name": "香菱",
+      "type": "长柄武器",
+      "role": "蒸发后台输出",
+      "notes": "默认班尼特供能的蒸发队；充能达标优先于双暴面板。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "scarlet": 100,
+        "engulf": 98,
+        "catch": 97,
+        "fjords": 96,
+        "wavebreaker": 96,
+        "homa": 94,
+        "dragonsbane": 94,
+        "kitain": 92,
+        "fav_lance": 91
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/xiangling-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "vodyanitsa",
+      "name": "沃雅妮莎",
+      "type": "法器",
+      "role": "水后台/生命增攻辅助",
+      "notes": "7.1新角色；默认生命增攻和循环，三星讨龙未列入此次库存。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "hymn": 100,
+        "amber": 94,
+        "sac_jade": 90,
+        "waveriding": 90,
+        "moonglow": 88,
+        "jadefall": 88,
+        "ashhorn": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/vodyanitsa-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "nicole",
+      "name": "尼可",
+      "type": "法器",
+      "role": "火盾/攻击增益辅助",
+      "notes": "需堆攻击与充能；并非看个人火伤最大化。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "angelos": 100,
+        "crane": 94,
+        "atlas": 93,
+        "dust": 92,
+        "winesong": 91,
+        "vivid": 90,
+        "starcaller": 90,
+        "oathsworn": 90,
+        "cashflow": 89,
+        "tulay": 89,
+        "flowing": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/nicole-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "prune",
+      "name": "布伦妮",
+      "type": "法器",
+      "role": "风/攻击增益辅助",
+      "notes": "需达到攻击增益目标并满足循环；不是纯精通砂糖模板。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "angelos": 100,
+        "crane": 97,
+        "atlas": 97,
+        "dust": 96,
+        "vivid": 94,
+        "cashflow": 94,
+        "oathsworn": 94,
+        "hakushin": 92,
+        "flowing": 91,
+        "winesong": 90,
+        "fav_codex": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/prune-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "columbina",
+      "name": "哥伦比娅",
+      "type": "法器",
+      "role": "水后台/月反应输出",
+      "notes": "后台月反应定位，循环优先；非任意配队统一强度。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "nocturne": 100,
+        "sac_jade": 92,
+        "reliquary": 91,
+        "surf": 90,
+        "tome": 89,
+        "nightweaver": 89,
+        "amber": 89,
+        "dreams": 88,
+        "fav_codex": 88,
+        "kagura": 87,
+        "widsith": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/columbina-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "nefer",
+      "name": "奈芙尔",
+      "type": "法器",
+      "role": "月绽放站场输出",
+      "notes": "默认月绽放；流浪乐章按平均而不是反复重开抽好词条。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "reliquary": 100,
+        "nightweaver": 94,
+        "dawning": 93,
+        "surf": 91,
+        "tome": 90,
+        "blackmarrow": 89,
+        "widsith": 88,
+        "dreams": 88,
+        "starcaller": 87,
+        "sunny": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/nefer-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "lauma",
+      "name": "菈乌玛",
+      "type": "法器",
+      "role": "精通草/月绽放辅助",
+      "notes": "先满足循环，再优化精通；天光的纺琴有强替代价值。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "nightweaver": 100,
+        "etherlight": 98,
+        "dreams": 96,
+        "starcaller": 95,
+        "sunny": 94,
+        "blackmarrow": 92,
+        "fav_codex": 91,
+        "fruit": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/lauma-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "ifa",
+      "name": "伊法",
+      "type": "法器",
+      "role": "精通扩散/感电驾驶",
+      "notes": "精通风驾驶，默认有雷水；非暴击风直伤。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "sunny": 100,
+        "dreams": 98,
+        "sac_frag": 96,
+        "hakushin": 96,
+        "evenstar": 93,
+        "mappa": 89,
+        "fruit": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "varesa",
+      "name": "瓦雷莎",
+      "type": "法器",
+      "role": "雷下落站场输出",
+      "notes": "下落直伤定位，队伍满足增益和循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "vivid": 100,
+        "kagura": 91,
+        "crane": 89,
+        "atlas": 88,
+        "prayer": 88,
+        "widsith": 87,
+        "flowing": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "mizuki",
+      "name": "梦见月瑞希",
+      "type": "法器",
+      "role": "精通扩散/治疗",
+      "notes": "以扩散伤害和治疗为主；不按双暴站场评分。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "sunny": 100,
+        "dreams": 96,
+        "sac_frag": 94,
+        "evenstar": 91,
+        "mappa": 89,
+        "fruit": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "lanyan",
+      "name": "蓝砚",
+      "type": "法器",
+      "role": "护盾/风辅助",
+      "notes": "攻击护盾；白辰之环要求触发雷相关反应，默认含雷队；本基线四五星范围，不含讨龙。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "starcaller": 100,
+        "hakushin": 97,
+        "fav_codex": 96,
+        "amber": 94,
+        "oathsworn": 93,
+        "atlas": 92,
+        "dust": 92,
+        "sac_frag": 92
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "citlali",
+      "name": "茜特菈莉",
+      "type": "法器",
+      "role": "护盾/增伤辅助",
+      "notes": "默认水火相关队伍、精通盾；非站场冰输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "starcaller": 100,
+        "dreams": 90,
+        "evenstar": 89,
+        "sac_frag": 88,
+        "fav_codex": 85,
+        "fruit": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "mualani",
+      "name": "玛拉妮",
+      "type": "法器",
+      "role": "蒸发站场输出",
+      "notes": "生命蒸发，控制暴击率溢出并保持火附着。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "surf": 100,
+        "sac_jade": 92,
+        "tome": 90,
+        "yaxche": 88,
+        "widsith": 86,
+        "ashhorn": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "xianyun",
+      "name": "闲云",
+      "type": "法器",
+      "role": "下落增益/治疗",
+      "notes": "按攻击增益与循环优先。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "crane": 100,
+        "angelos": 95,
+        "atlas": 92,
+        "dust": 90,
+        "vivid": 89,
+        "oathsworn": 89,
+        "fav_codex": 88,
+        "winesong": 88,
+        "flowing": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "charlotte",
+      "name": "夏洛蒂",
+      "type": "法器",
+      "role": "群体治疗/冰辅助",
+      "notes": "爆发循环优先，非站场重击输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_codex": 100,
+        "oathsworn": 96,
+        "amber": 95,
+        "winesong": 93,
+        "atlas": 92,
+        "flowing": 89,
+        "eye": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "wriothesley",
+      "name": "莱欧斯利",
+      "type": "法器",
+      "role": "冰站场输出",
+      "notes": "常规冰输出；有生命变化触发相关被动。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "cashflow": 100,
+        "tulay": 94,
+        "prayer": 89,
+        "atlas": 88,
+        "widsith": 87,
+        "flowing": 84,
+        "frostbearer": 80
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "neuvillette",
+      "name": "那维莱特",
+      "type": "法器",
+      "role": "水重击站场输出",
+      "notes": "按生命与重击，并满足循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "tome": 100,
+        "sac_jade": 92,
+        "surf": 89,
+        "amber": 88,
+        "jadefall": 83,
+        "balladblue": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "baizhu",
+      "name": "白术",
+      "type": "法器",
+      "role": "草治疗/辅助",
+      "notes": "生命与稳定爆发循环，非站场蔓激化。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "jadefall": 100,
+        "amber": 97,
+        "fav_codex": 95,
+        "moonglow": 91,
+        "fruit": 89,
+        "sac_frag": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "nahida",
+      "name": "纳西妲",
+      "type": "法器",
+      "role": "草后台/精通增益",
+      "notes": "草反应队，精通与双暴配平；后台不按站场同一套权重。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "dreams": 100,
+        "kagura": 96,
+        "nightweaver": 95,
+        "starcaller": 94,
+        "evenstar": 92,
+        "sac_frag": 91,
+        "widsith": 89,
+        "solar": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "wanderer",
+      "name": "流浪者",
+      "type": "法器",
+      "role": "风站场普攻输出",
+      "notes": "普攻为主，有盾或抗打断保证输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "tulay": 100,
+        "cashflow": 94,
+        "prayer": 92,
+        "atlas": 91,
+        "dust": 91,
+        "widsith": 90,
+        "solar": 86,
+        "dodoco": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "heizou",
+      "name": "鹿野院平藏",
+      "type": "法器",
+      "role": "风直伤驾驶/速切",
+      "notes": "直伤与扩散混合，非纯精通路线。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "kagura": 100,
+        "atlas": 97,
+        "widsith": 96,
+        "prayer": 95,
+        "solar": 92,
+        "flowing": 90,
+        "mappa": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "yae",
+      "name": "八重神子",
+      "type": "法器",
+      "role": "激化后台输出",
+      "notes": "雷草激化，保证战技持续输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "kagura": 100,
+        "dreams": 93,
+        "prayer": 92,
+        "atlas": 92,
+        "widsith": 92,
+        "evenstar": 87,
+        "solar": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "kokomi",
+      "name": "珊瑚宫心海",
+      "type": "法器",
+      "role": "站场治疗/挂水驾驶",
+      "notes": "站场海染/治疗驾驶，非后台讨龙增攻；保持爆发循环。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "moonglow": 100,
+        "amber": 97,
+        "hakushin": 94,
+        "jadefall": 93,
+        "sac_frag": 92,
+        "waveriding": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "yanfei",
+      "name": "烟绯",
+      "type": "法器",
+      "role": "蒸发站场输出",
+      "notes": "重击蒸发，不是四命护盾辅助。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "tome": 100,
+        "cashflow": 98,
+        "prayer": 97,
+        "atlas": 96,
+        "widsith": 96,
+        "dodoco": 93,
+        "solar": 90,
+        "flowing": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "barbara",
+      "name": "芭芭拉",
+      "type": "法器",
+      "role": "治疗/挂水辅助",
+      "notes": "只用四五星；常规辅助不是蒸发重击。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "amber": 100,
+        "moonglow": 98,
+        "jadefall": 96,
+        "sac_frag": 95,
+        "fav_codex": 94,
+        "waveriding": 91
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "klee",
+      "name": "可莉",
+      "type": "法器",
+      "role": "纯火站场输出",
+      "notes": "纯火基线；未独立复核所有7.1魔导配置和新武器。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "cashflow": 100,
+        "tome": 99,
+        "kagura": 98,
+        "atlas": 97,
+        "prayer": 96,
+        "widsith": 95,
+        "tulay": 93,
+        "dust": 93,
+        "dodoco": 91
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "lisa",
+      "name": "丽莎",
+      "type": "法器",
+      "role": "减防/雷后台辅助",
+      "notes": "循环与团队功能优先；非站场激化。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_codex": 100,
+        "hakushin": 97,
+        "amber": 95,
+        "winesong": 94,
+        "oathsworn": 93,
+        "fruit": 91,
+        "evenstar": 91
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "mona",
+      "name": "莫娜",
+      "type": "法器",
+      "role": "增伤/爆发循环辅助",
+      "notes": "常规增伤；未纳入三星讨龙，具体魔导队可改金珀驾驶。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_codex": 100,
+        "amber": 99,
+        "winesong": 95,
+        "oathsworn": 93,
+        "waveriding": 93,
+        "hakushin": 92
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "ningguang",
+      "name": "凝光",
+      "type": "法器",
+      "role": "岩站场/速切输出",
+      "notes": "默认有护盾以支持尘锁候选；避免长驻四风叠层假设。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "dust": 100,
+        "atlas": 99,
+        "prayer": 96,
+        "kagura": 96,
+        "widsith": 95,
+        "solar": 92,
+        "flowing": 91,
+        "blackcliff_catalyst": 88
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "sucrose",
+      "name": "砂糖",
+      "type": "法器",
+      "role": "精通风辅助/驾驶",
+      "notes": "精通共享与扩散；雷水队可选白辰，三星讨龙未加入。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "dreams": 100,
+        "sac_frag": 98,
+        "hakushin": 97,
+        "evenstar": 97,
+        "sunny": 96,
+        "mappa": 92,
+        "fruit": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "linnea",
+      "name": "莉奈娅",
+      "type": "弓",
+      "role": "防御岩后台/治疗",
+      "notes": "月结晶/防御后台；并非攻击弓手。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "golden": 100,
+        "aqua": 88,
+        "elegy": 88,
+        "covenant": 86,
+        "snare": 83,
+        "fav_bow": 82,
+        "skyharp": 82,
+        "firstmagic": 81
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/linnea-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "jahoda",
+      "name": "雅珂达",
+      "type": "弓",
+      "role": "风治疗/辅助",
+      "notes": "优先团队充能与增益，个人伤害次要。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "elegy": 100,
+        "fav_bow": 96,
+        "snare": 91,
+        "rainsbow": 91,
+        "endline": 89,
+        "fading": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/jahoda-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "chasca",
+      "name": "恰斯卡",
+      "type": "弓",
+      "role": "多元素重击站场",
+      "notes": "多元素队伍与重击输出定位。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "astral": 100,
+        "firstmagic": 93,
+        "aqua": 92,
+        "thundering": 87,
+        "skyharp": 86,
+        "flowerfeather": 86,
+        "songstill": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "ororon",
+      "name": "欧洛伦",
+      "type": "弓",
+      "role": "雷后台/感电辅助",
+      "notes": "水雷队后台，充能达标后兼顾个人伤害。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "elegy": 100,
+        "polar": 96,
+        "aqua": 95,
+        "skyharp": 92,
+        "alleyhunter": 90,
+        "fading": 90,
+        "fav_bow": 89,
+        "stringless": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "sigewinne",
+      "name": "希格雯",
+      "type": "弓",
+      "role": "治疗/生命辅助",
+      "notes": "生命治疗与后台增益，非爆发核弹。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "silvershower": 100,
+        "elegy": 87,
+        "sequence": 85,
+        "fav_bow": 84,
+        "sac_bow": 83
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "sethos",
+      "name": "赛索斯",
+      "type": "弓",
+      "role": "激化雷站场输出",
+      "notes": "反应重击路线；三星弹弓未加入。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "hunter": 100,
+        "aqua": 93,
+        "stringless": 92,
+        "jadevista": 92,
+        "skyharp": 91,
+        "scion": 90,
+        "ibis": 86,
+        "windblume": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "lyney",
+      "name": "林尼",
+      "type": "弓",
+      "role": "纯火重击输出",
+      "notes": "纯火/高火附着覆盖；需满足武器队伍条件。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "firstmagic": 100,
+        "aqua": 96,
+        "polar": 92,
+        "thundering": 91,
+        "skyharp": 91,
+        "amos": 90,
+        "scion": 86,
+        "songstill": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "faruzan",
+      "name": "珐露珊",
+      "type": "弓",
+      "role": "风伤增益/减抗",
+      "notes": "默认六命，但仍重视循环；西风需要暴击触发。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "elegy": 100,
+        "fav_bow": 97,
+        "fading": 91,
+        "snare": 91,
+        "endline": 90,
+        "sac_bow": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "collei",
+      "name": "柯莱",
+      "type": "弓",
+      "role": "草后台/绽放辅助",
+      "notes": "绽放挂草定位；祭礼可提供额外技能次数。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "elegy": 100,
+        "sac_bow": 96,
+        "fav_bow": 93,
+        "windblume": 90,
+        "snare": 90,
+        "endline": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "tighnari",
+      "name": "提纳里",
+      "type": "弓",
+      "role": "蔓激化重击输出",
+      "notes": "草雷激化，重击与精通收益均计入。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "hunter": 100,
+        "aqua": 94,
+        "firstmagic": 94,
+        "polar": 92,
+        "skyharp": 89,
+        "jadevista": 87,
+        "stringless": 85,
+        "windblume": 84,
+        "ibis": 84,
+        "scion": 84
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "yelan",
+      "name": "夜兰",
+      "type": "弓",
+      "role": "水后台输出/增伤",
+      "notes": "默认可由队伍与圣遗物满足充能；高ER时提高西风权重。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "aqua": 100,
+        "elegy": 95,
+        "fav_bow": 92,
+        "fading": 90,
+        "sac_bow": 89,
+        "mouun": 88,
+        "skyharp": 87,
+        "thundering": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "sara",
+      "name": "九条裟罗",
+      "type": "弓",
+      "role": "攻击增益/速切",
+      "notes": "基础攻击与充能并重，非普攻主C。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "elegy": 100,
+        "skyharp": 99,
+        "mouun": 94,
+        "fading": 94,
+        "polar": 93,
+        "thundering": 92,
+        "sac_bow": 92,
+        "fav_bow": 90
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "gorou",
+      "name": "五郎",
+      "type": "弓",
+      "role": "岩队防御辅助",
+      "notes": "六命岩辅助，优先全队循环，不拿防御弓当增防倍率来源。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "fav_bow": 100,
+        "elegy": 90,
+        "sac_bow": 90,
+        "endline": 89,
+        "snare": 89,
+        "fading": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "aloy",
+      "name": "埃洛伊",
+      "type": "弓",
+      "role": "融化速切爆发",
+      "notes": "限定联动角色也纳入；不假设有不存在的命座。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "polar": 100,
+        "aqua": 99,
+        "stringless": 97,
+        "skyharp": 96,
+        "thundering": 95,
+        "mouun": 94,
+        "windblume": 93,
+        "amos": 89
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "yoimiya",
+      "name": "宵宫",
+      "type": "弓",
+      "role": "火普攻站场输出",
+      "notes": "普攻蒸发基线；弓藏高精作为强替代。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "thundering": 100,
+        "rust": 93,
+        "aqua": 92,
+        "polar": 89,
+        "skyharp": 89,
+        "amos": 87,
+        "songstill": 85
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "venti",
+      "name": "温迪",
+      "type": "弓",
+      "role": "风站场/魔导输出",
+      "notes": "采用更新后的风直伤/魔导玩法；非旧版纯精通模板。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "daybreak": 100,
+        "thundering": 87,
+        "astral": 84,
+        "aqua": 83,
+        "firstmagic": 83,
+        "polar": 82,
+        "skyharp": 81,
+        "elegy": 80,
+        "stringless": 78
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/q/venti-quickguide/",
+          "scope": "已阅读攻略相关章节；候选关系参考，数值评分由本程序作者拟定。"
+        }
+      ],
+      "review": "已查候选关系，评分为启发式"
+    },
+    {
+      "id": "ganyu",
+      "name": "甘雨",
+      "type": "弓",
+      "role": "冻结重击/爆发输出",
+      "notes": "冻结玩法基线；非融甘通用表。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "firstmagic": 100,
+        "polar": 99,
+        "aqua": 98,
+        "amos": 96,
+        "skyharp": 93,
+        "thundering": 92,
+        "crescent_bow": 90,
+        "hamayumi": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "diona",
+      "name": "迪奥娜",
+      "type": "弓",
+      "role": "护盾/治疗/冰充能",
+      "notes": "优先技能重置与循环，非冰伤输出。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "elegy": 100,
+        "sac_bow": 98,
+        "fav_bow": 95,
+        "endline": 87,
+        "snare": 87
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "tartaglia",
+      "name": "达达利亚",
+      "type": "弓",
+      "role": "水站场/蒸发爆发",
+      "notes": "常规万达等蒸发队，不按纯水普攻特化。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "polar": 100,
+        "aqua": 96,
+        "thundering": 95,
+        "firstmagic": 92,
+        "skyharp": 92,
+        "viridescent": 90,
+        "rust": 86
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "fischl",
+      "name": "菲谢尔",
+      "type": "弓",
+      "role": "激化后台输出",
+      "notes": "雷草激化，后台武器被动需实际可用；未穷尽7.1魔导/星爍变体。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "polar": 100,
+        "aqua": 98,
+        "hunter": 96,
+        "firstmagic": 95,
+        "skyharp": 94,
+        "stringless": 94,
+        "alleyhunter": 93,
+        "jadevista": 92,
+        "songstill": 91
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    },
+    {
+      "id": "amber",
+      "name": "安柏",
+      "type": "弓",
+      "role": "增伤/破盾辅助",
+      "notes": "爆发快速触发辅助效果；不是蓄力主C。",
+      "priority": 1,
+      "enabled": true,
+      "locked_weapon": null,
+      "scores": {
+        "elegy": 100,
+        "fav_bow": 87,
+        "endline": 84,
+        "snare": 84,
+        "sac_bow": 83,
+        "fading": 82
+      },
+      "sources": [
+        {
+          "url": "https://keqingmains.com/",
+          "scope": "一般构筑知识背景；本行尚未逐项完成7.1攻略核验，不能视为KQM背书。"
+        }
+      ],
+      "review": "启发式，待逐项版本核验"
+    }
+  ],
+  "tool_version": "2.0.0",
+  "planning": {
+    "mode": "account",
+    "theater": {
+      "name": "我的剧诗方案",
+      "roster": [],
+      "reservations": {},
+      "priorities": {},
+      "locks": {},
+      "use_account_locks": false
+    },
+    "saved_plans": []
+  }
+}</script><script>/* Exact rectangular assignment with an independent primal/dual certificate.
+   No dependencies, networking, account access, or combat simulation. */
+'use strict';
+const WeaponAllocator = (() => {
+ const TYPES=['单手剑','双手剑','长柄武器','法器','弓'];
+ const MAX_QUANTITY=1000000,MAX_CELLS=2000000;
+ function integer(x,min,max,label) {if(!Number.isSafeInteger(x)||x<min||x>max)throw Error(`${label}必须为${min}–${max}整数。`);}
+ function validate(d) {
+  if(!d||!Array.isArray(d.characters)||!Array.isArray(d.weapons))throw Error('配置必须包含characters与weapons数组。');
+  if(d.characters.length>1000||d.weapons.length>2000)throw Error('当前限制1000个角色、2000种武器。');
+  const wm=new Map();
+  d.weapons.forEach(w=>{if(typeof w.id!=='string'||!w.id||wm.has(w.id))throw Error('武器ID为空或重复。');
+   if(!TYPES.includes(w.type)||![4,5].includes(w.rarity))throw Error(`${w.id}武器类型或星级非法。`);
+   integer(w.quantity,0,MAX_QUANTITY,w.id+'库存'); integer(w.refinement,1,5,w.id+'精炼'); wm.set(w.id,w);});
+  const seen=new Set();
+  d.characters.forEach(c=>{if(typeof c.id!=='string'||!c.id||seen.has(c.id))throw Error('角色ID为空或重复。');seen.add(c.id);
+   if(!TYPES.includes(c.type))throw Error(c.id+'武器类型非法。');
+   integer(c.priority??1,0,100,c.id+'优先级');if(c.enabled!==undefined&&typeof c.enabled!=='boolean')throw Error('enabled必须是布尔值。');
+   if(!c.scores||Array.isArray(c.scores)||typeof c.scores!=='object'||!Object.keys(c.scores).length)throw Error(c.id+'必须至少有一个候选评分。');
+   Object.entries(c.scores).forEach(([wid,s])=>{if(!wm.has(wid)||wm.get(wid).type!==c.type)throw Error(c.id+'/'+wid+'类型不匹配或不存在。');integer(s,0,100,c.id+'/'+wid+'评分');});
+   if(c.locked_weapon!=null&&!Object.hasOwn(c.scores,c.locked_weapon))throw Error(c.id+'锁定武器尚未评分。');
+  });
+ }
+ function hungarian(cost) {
+  const n=cost.length;if(!n)return {cols:[],u:[],v:[]};const m=cost[0].length;
+  if(m<n||cost.some(r=>r.length!==m))throw Error('武器副本不足或矩阵不规则。');
+  const u=Array(n+1).fill(0),v=Array(m+1).fill(0),owner=Array(m+1).fill(0),parent=Array(m+1).fill(0);
+  for(let r=1;r<=n;r++){
+   owner[0]=r;let col=0;const dist=Array(m+1).fill(Infinity),seen=Array(m+1).fill(false);
+   do{seen[col]=true;const row=owner[col];let delta=Infinity,next=0;
+    for(let j=1;j<=m;j++)if(!seen[j]){const rc=cost[row-1][j-1]-u[row]-v[j];if(rc<dist[j]){dist[j]=rc;parent[j]=col;}if(dist[j]<delta){delta=dist[j];next=j;}}
+    if(!next)throw Error('无法找到增广路径。');
+    for(let j=0;j<=m;j++){if(seen[j]){u[owner[j]]+=delta;v[j]-=delta;}else dist[j]-=delta;}
+    col=next;
+   }while(owner[col]!==0);
+   do{const prev=parent[col];owner[col]=owner[prev];col=prev;}while(col);
+  }
+  const cols=Array(n).fill(-1);for(let j=1;j<=m;j++)if(owner[j])cols[owner[j]-1]=j-1;
+  return {cols,u:u.slice(1),v:v.slice(1)};
+ }
+ function verify(cost,{cols,u,v}){
+  const n=cost.length,m=n?cost[0].length:v.length;
+  if(cols.length!==n||u.length!==n||v.length!==m||new Set(cols).size!==n||cols.some(j=>j<0||j>=m))throw Error('分配证书维度/副本不合法。');
+  if(v.some(x=>x>0))throw Error('列势能非法。');
+  for(let i=0;i<n;i++)for(let j=0;j<m;j++)if(u[i]+v[j]>cost[i][j])throw Error('对偶可行性校验失败。');
+  for(let i=0;i<n;i++)if(u[i]+v[cols[i]]!==cost[i][cols[i]])throw Error('匹配边不满足紧约束。');
+  const chosen=new Set(cols);for(let j=0;j<m;j++)if(!chosen.has(j)&&v[j]!==0)throw Error('未使用列势能校验失败。');
+  const primal=cols.reduce((s,j,i)=>s+cost[i][j],0),dual=u.reduce((a,b)=>a+b,0)+v.reduce((a,b)=>a+b,0);
+  if(primal!==dual)throw Error('最优性间隙不为零。');return {verified:true,primal_cost:primal,dual_bound:dual,gap:0,u,v,assigned_columns:cols};
+ }
+ function solve(d,bans=new Set()){
+  validate(d);const assignment=[],certificates={};
+  for(const type of TYPES){const chars=d.characters.filter(c=>c.enabled!==false&&c.type===type),copies=[];
+   // A weapon can serve at most as many characters as have a permitted edge.
+   // Surplus identical copies are omitted without changing the feasible assignments.
+   d.weapons.filter(w=>w.type===type).forEach(w=>{
+    const eligible=chars.filter(c=>Object.hasOwn(c.scores,w.id)&&(!c.locked_weapon||c.locked_weapon===w.id)&&!bans.has(c.id+'|'+w.id)).length;
+    for(let j=1;j<=Math.min(w.quantity,eligible);j++)copies.push({w,num:j});
+   });
+   if(chars.length*copies.length>MAX_CELLS)throw Error('评分矩阵超过浏览器安全规模，请减少候选或参演角色。');
+   if(chars.length>copies.length)throw Error(`${type}：${chars.length}位角色，但仅${copies.length}个副本。`);if(!chars.length)continue;
+   const base=chars.map(c=>Math.max(...Object.values(c.scores)));
+   const maxcost=Math.max(...chars.map((c,i)=>(base[i]-Math.min(...Object.values(c.scores)))*(c.priority??1)));
+   const blocked=chars.length*maxcost+1,allowed=[];
+   const cost=chars.map((c,i)=>copies.map(({w})=>{
+    const ok=Object.hasOwn(c.scores,w.id)&&(!c.locked_weapon||c.locked_weapon===w.id)&&!bans.has(c.id+'|'+w.id);
+    (allowed[i]??=[]).push(ok);return ok?(base[i]-c.scores[w.id])*(c.priority??1):blocked;
+   }));
+   chars.forEach((c,i)=>{if(!allowed[i].some(Boolean))throw Error(c.name+'没有可用的已评分候选。请检查库存和锁定。');});
+   const h=hungarian(cost);const bad=chars.filter((c,i)=>!allowed[i][h.cols[i]]);
+   if(bad.length)throw Error(`${type}候选争抢导致无解：${bad.map(c=>c.name).join('、')}。请增加合法候选或取消冲突锁定。`);
+   const cert=verify(cost,h);cert.row_ids=chars.map(c=>c.id);cert.column_ids=copies.map(({w,num})=>w.id+'#'+num);certificates[type]=cert;
+   chars.forEach((c,i)=>{const {w,num}=copies[h.cols[i]],score=c.scores[w.id];assignment.push({character_id:c.id,character:c.name,type,role:c.role,weapon_id:w.id,weapon:w.name,weapon_en:w.name_en||'',copy:num,physical_id:w.id+'#'+num,rarity:w.rarity,refinement:w.refinement,score,priority:c.priority??1,weighted_score:score*(c.priority??1),individual_best:base[i],regret:base[i]-score,notes:c.notes||'',review:c.review||'自定义评分',sources:c.sources||[]});});
+  }
+  const usage={};assignment.forEach(a=>usage[a.weapon_id]=(usage[a.weapon_id]||0)+1);
+  if(new Set(assignment.map(a=>a.physical_id)).size!==assignment.length)throw Error('内部错误：重复分配副本。');
+  const inventory=d.weapons.map(w=>({...w,used:usage[w.id]||0,remaining:w.quantity-(usage[w.id]||0)}));
+  if(inventory.some(w=>w.remaining<0))throw Error('内部错误：超过库存。');
+  const summary={character_count:assignment.length,weapon_kinds_in_inventory:d.weapons.length,physical_copies:d.weapons.reduce((s,w)=>s+w.quantity,0),scored_pairs:d.characters.filter(c=>c.enabled!==false).reduce((s,c)=>s+Object.keys(c.scores).length,0),total_score:assignment.reduce((s,a)=>s+a.score,0),weighted_total:assignment.reduce((s,a)=>s+a.weighted_score,0),weighted_regret:assignment.reduce((s,a)=>s+a.regret*a.priority,0),first_choice_count:assignment.filter(a=>a.regret===0).length,minimum_score:assignment.length?Math.min(...assignment.map(a=>a.score)):null,five_star_count:assignment.filter(a=>a.rarity===5).length,four_star_count:assignment.filter(a=>a.rarity===4).length,used_weapon_kinds:Object.keys(usage).length,inventory_violation_count:0,certificate_verified:true};
+  return {schema_version:1,version:d.version,as_of:d.as_of,warning:'只证明当前启发式评分候选池的精确最优；不是实战伤害证明。',summary,assignment,inventory,certificates};
+ }
+ return {TYPES,MAX_QUANTITY,MAX_CELLS,validate,hungarian,verify,solve};
+})();
+if(typeof module!=='undefined'&&module.exports)module.exports=WeaponAllocator;
+</script><script>/* Scenario planning: shared inventory; independent theater roster and reservations.
+   External trial/friend equipment never consumes or expands account inventory. */
+'use strict';
+const WeaponPlanner=(()=>{
+ const A=typeof WeaponAllocator!=='undefined'?WeaponAllocator:require('./allocator.js');
+ const clone=x=>JSON.parse(JSON.stringify(x));
+ const blankTheater=()=>({name:'我的剧诗方案',roster:[],reservations:{},priorities:{},locks:{},use_account_locks:false});
+ const dict=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
+ function int(x,min,max,label){if(!Number.isSafeInteger(x)||x<min||x>max)throw Error(`${label}必须为${min}–${max}整数。`);}
+ function normalize(input){
+  const d=clone(input);A.validate(d);
+  if(d.planning===undefined)d.planning={mode:'account',theater:blankTheater(),saved_plans:[]};
+  if(!dict(d.planning))throw Error('planning必须是对象。');
+  if(d.planning.saved_plans===undefined)d.planning.saved_plans=[];
+  if(Array.isArray(d.assumptions))d.assumptions=d.assumptions.map(s=>typeof s==='string'?s.replace('可在库存中改为0/1/2。','库存现可自定义为0或正整数。'):s);
+  d.schema_version=2;d.tool_version='2.0.0';validate(d);return d;
+ }
+ function validateTheater(t,d){
+  if(!dict(t)||typeof t.name!=='string'||!t.name.trim()||t.name.length>120)throw Error('剧诗方案名需为1–120个字符。');
+  if(!Array.isArray(t.roster))throw Error('剧诗roster必须是列表。');
+  const cm=new Map(d.characters.map(c=>[c.id,c])),wm=new Map(d.weapons.map(w=>[w.id,w]));
+  const seen=new Set();
+  for(const r of t.roster){
+   if(!dict(r)||!cm.has(r.character_id)||seen.has(r.character_id))throw Error('剧诗名单包含未知或重复角色。');
+   seen.add(r.character_id);
+   if(!['own','trial','friend'].includes(r.source))throw Error('角色来源必须是自有、试用或好友助演。');
+   if(r.weapon_label!==undefined&&(typeof r.weapon_label!=='string'||r.weapon_label.length>300))throw Error('外部装备备注需为300字符以内的文字。');
+  }
+  if(typeof t.use_account_locks!=='boolean')throw Error('use_account_locks必须是布尔值。');
+  for(const key of ['reservations','priorities','locks'])if(!dict(t[key]))throw Error(`剧诗${key}必须是对象。`);
+  for(const [wid,q] of Object.entries(t.reservations)){if(!wm.has(wid))throw Error('预留了未知武器：'+wid);int(q,0,A.MAX_QUANTITY,'预留数量');}
+  for(const [cid,q] of Object.entries(t.priorities)){if(!cm.has(cid))throw Error('优先级包含未知角色：'+cid);int(q,0,100,'剧诗优先级');}
+  for(const [cid,wid] of Object.entries(t.locks)){
+   if(!cm.has(cid)||(wid!==null&&!Object.hasOwn(cm.get(cid).scores,wid)))throw Error('剧诗锁定了未知角色或未评分武器。');
+  }
+ }
+ function validate(d){
+  A.validate(d);const p=d.planning;
+  if(!dict(p)||!['account','theater'].includes(p.mode))throw Error('分配模式必须为account或theater。');
+  validateTheater(p.theater,d);
+  if(!Array.isArray(p.saved_plans)||p.saved_plans.length>50)throw Error('最多保存50个剧诗方案。');
+  for(const t of p.saved_plans)validateTheater(t,d);
+ }
+ function prepare(d){
+  validate(d);const effective=clone(d),p=d.planning,t=p.theater,external=[];
+  if(p.mode==='theater'){
+   const own=new Set(t.roster.filter(r=>r.source==='own').map(r=>r.character_id));
+   const cm=new Map(d.characters.map(c=>[c.id,c]));
+   for(const r of t.roster)if(r.source!=='own'){
+    const c=cm.get(r.character_id);
+    external.push({character_id:c.id,character:c.name,type:c.type,source:r.source,
+      weapon_label:r.weapon_label||(r.source==='trial'?'试用自带装备':'好友自带装备'),consumes_inventory:false});
+   }
+   for(const c of effective.characters){
+    c.enabled=own.has(c.id);
+    if(Object.hasOwn(t.priorities,c.id))c.priority=t.priorities[c.id];
+    c.locked_weapon=Object.hasOwn(t.locks,c.id)?t.locks[c.id]:(t.use_account_locks?c.locked_weapon:null);
+   }
+   for(const w of effective.weapons){
+    const reserved=t.reservations[w.id]||0;
+    if(reserved>w.quantity)throw Error(`${w.name}预留${reserved}把，超过实际库存${w.quantity}把。`);
+    w.quantity-=reserved;
+   }
+  }
+  delete effective.planning;
+  const ownCount=effective.characters.filter(c=>c.enabled!==false).length;
+  return {effective,external,context:{mode:p.mode,name:p.mode==='theater'?t.name:'全角色方案',
+   roster_count:ownCount+external.length,own_count:ownCount,external_count:external.length,
+   use_account_locks:p.mode==='account'||t.use_account_locks,
+   reservations:p.mode==='theater'?clone(t.reservations):{},
+   scope:'开演前为整份参演名单一次性配装；未验证当期入场资格，未优化每幕配队、活力或祝福。'}};
+ }
+ function plan(d){
+  const {effective,external,context}=prepare(d),r=A.solve(effective);
+  const total=new Map(d.weapons.map(w=>[w.id,w]));
+  r.inventory=r.inventory.map(w=>{const original=total.get(w.id),reserved=context.reservations[w.id]||0;
+   return {...w,quantity:original.quantity,reserved,available:original.quantity-reserved,remaining:original.quantity-reserved-w.used};});
+  r.planning=context;r.external_characters=external;r.schema_version=2;r.tool_version='2.0.0';
+  r.summary.roster_count=context.roster_count;r.summary.external_count=external.length;
+  r.summary.total_physical_copies=d.weapons.reduce((s,w)=>s+w.quantity,0);
+  r.summary.reserved_copies=r.inventory.reduce((s,w)=>s+w.reserved,0);
+  return r;
+ }
+ return {blankTheater,normalize,validateTheater,validate,prepare,plan};
+})();
+if(typeof module!=='undefined'&&module.exports)module.exports=WeaponPlanner;
+</script><script>'use strict';
+const initial=JSON.parse(document.getElementById('embeddedData').textContent);
+const STORE='teyvat-armory-v2';
+const $=id=>document.getElementById(id),clone=x=>JSON.parse(JSON.stringify(x));
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeURL=s=>{try{const u=new URL(s);return ['https:','http:'].includes(u.protocol)?u.href:'#';}catch{return '#';}};
+let data=WeaponPlanner.normalize(initial),result=null,dirty=true,activeTab='allocation',editId=null,draftScores={},undoStock=null,bootWarning='';
+let storedConfig=null;
+try{storedConfig=localStorage.getItem(STORE);}catch{$('storageStatus').textContent='本地保存不可用，请使用“保存配置”备份';}
+if(storedConfig){try{data=WeaponPlanner.normalize(JSON.parse(storedConfig));$('storageStatus').textContent='已恢复本浏览器保存的配置';}catch{bootWarning='本地配置未能恢复，已载入内置配置；可使用“导入配置”恢复备份。';}}
+const theater=()=>data.planning.mode==='theater',T=()=>data.planning.theater;
+function say(msg,cls=''){$('status').textContent=msg;$('status').className='status '+cls;}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(data));$('storageStatus').textContent='已自动保存到本浏览器 · 导出配置可备份';}catch{$('storageStatus').textContent='本地保存不可用，请使用“保存配置”备份';}}
+function readInt(el,min,max,label){const n=Number(el.value);if(!el.value.trim()||!Number.isSafeInteger(n)||n<min||n>max)throw Error(`${label}必须是${min}–${max}的整数。`);return n;}
+function priority(c){return theater()?(T().priorities[c.id]??c.priority??1):(c.priority??1);}
+function lock(c){return theater()?(Object.hasOwn(T().locks,c.id)?T().locks[c.id]:(T().use_account_locks?c.locked_weapon:null)):c.locked_weapon;}
+function rosterMap(){return new Map(T().roster.map(r=>[r.character_id,r]));}
+function markDirty(message='设置已保存。点击“重新分配”计算当前库存与名单。'){
+ dirty=true;result=null;persist();say(message,'dirty');render();
+}
+function compute(){
+ try{result=WeaponPlanner.plan(data);dirty=false;const s=result.summary;
+  say(`${result.planning.name}：${s.character_count}位自有角色完成分配${s.external_count?`，另有${s.external_count}位自带装备角色`:''}。库存无冲突，当前评分最优性证书通过。${theater()&&!s.roster_count?' 请先在“参演角色”中添加本次名单。':''}`);
+ }catch(e){result=null;dirty=true;say('无法完成分配：'+e.message,'error');}
+ render();
+}
+function matches(c){const q=$('search').value.toLowerCase().trim(),t=$('typeFilter').value;return(!t||c.type===t)&&(!q||[c.name,c.character,c.role,c.notes,c.weapon,c.name_en,c.weapon_en,c.id].filter(Boolean).join(' ').toLowerCase().includes(q));}
+function rosterMatches(c){const q=$('rosterSearch').value.trim().toLowerCase(),typ=$('rosterType').value;return(!q||[c.name,c.id,c.role].join(' ').toLowerCase().includes(q))&&(!typ||c.type===typ)&&(!$('selectedOnly').checked||T().roster.some(r=>r.character_id===c.id));}
+function renderStats(){
+ const s=result?.summary,own=theater()?T().roster.filter(r=>r.source==='own').length:data.characters.filter(c=>c.enabled!==false).length,ext=theater()?T().roster.filter(r=>r.source!=='own').length:0;
+ $('nchars').textContent=s?`${s.character_count} / ${own}`:`待计算 / ${own}`;
+ $('modeCount').textContent=theater()?`本次共${own+ext}位参演 · 自有${own} · 试用/助演${ext}`:`当前启用${own}位角色`;
+ $('total').textContent=s?s.weighted_total.toLocaleString():'—';$('conflicts').textContent=s?'0':'—';$('gap').textContent=s?'间隙 0':'待计算';
+ $('bestcount').textContent=s?`${s.first_choice_count}人达到候选首选分 · 最低${s.minimum_score??'—'}分`:'输入有变更，需要重新计算';
+ $('rarities').textContent=s?`${s.five_star_count}把五星 + ${s.four_star_count}把四星`:'统计本人库存分配';
+ $('csvBtn').disabled=$('resultBtn').disabled=dirty||!result;
+ $('proofs').innerHTML=result?(Object.entries(result.certificates).map(([t,c])=>`${esc(t)}：费用 ${c.primal_cost} = 对偶界 ${c.dual_bound}；间隙 ${c.gap}`).join('<br>')||'当前没有需要本人库存配装的角色。'):'完成重新分配后显示证书。';
+}
+function setMode(mode){data.planning.mode=mode;$('search').value='';$('typeFilter').value='';persist();switchTab(mode==='theater'?'roster':'allocation');compute();}
+function renderModes(){
+ $('accountMode').classList.toggle('selected',!theater());$('theaterMode').classList.toggle('selected',theater());
+ $('accountMode').setAttribute('aria-pressed',String(!theater()));$('theaterMode').setAttribute('aria-pressed',String(theater()));
+ $('theaterSettings').classList.toggle('hidden',!theater());$('rosterTab').classList.toggle('hidden',!theater());
+ $('planName').value=T().name;$('respectLocks').checked=T().use_account_locks;
+ $('reserveHeader').textContent=theater()?'剧诗预留':'预留';$('clearReservations').disabled=!theater();
+ const prev=$('savedPlans').value;
+ $('savedPlans').innerHTML='<option value="">选择已保存的剧诗方案…</option>'+data.planning.saved_plans.map((p,i)=>`<option value="${i}">${esc(p.name)} · ${p.roster.length}人</option>`).join('');
+ if([...$('savedPlans').options].some(o=>o.value===prev))$('savedPlans').value=prev;
+}
+function renderAllocation(){
+ const rm=new Map((result?.assignment||[]).map(a=>[a.character_id,a])),em=new Map((result?.external_characters||[]).map(e=>[e.character_id,e])),roster=rosterMap();
+ const rows=data.characters.filter(c=>(!theater()||roster.has(c.id))&&matches({...c,...(rm.get(c.id)||{})}));
+ $('rows').innerHTML=rows.map(c=>{
+  const a=rm.get(c.id),entry=roster.get(c.id),ext=theater()&&entry.source!=='own',e=em.get(c.id);
+  const select=theater()?`<span class="sourcebadge">${ext?(entry.source==='trial'?'试用':'好友助演'):'自有'}</span>`:`<input type="checkbox" data-enable="${esc(c.id)}" aria-label="启用${esc(c.name)}" ${c.enabled!==false?'checked':''}>`;
+  let weapon='<span class="muted">'+(c.enabled===false&&!theater()?'未启用':'待计算')+'</span>';
+  if(ext)weapon=`<div>${esc(e?.weapon_label||entry.weapon_label||(entry.source==='trial'?'试用自带装备':'好友自带装备'))}</div><small class="muted">占用本人库存：0</small>`;
+  else if(a)weapon=`<div class="weapon ${a.rarity===5?'gold':'purple'}">${esc(a.weapon)} <span class="copy">#${a.copy}</span></div><small class="muted">${a.rarity}★ · 精${a.refinement} · ${esc(a.type)}</small>`;
+  return `<tr><td>${select}</td><td><div class="name">${esc(c.name)}</div><div class="role">${esc(c.role)}</div></td><td>${weapon}</td><td>${a?`<span class="score">${a.score}</span><div class="loss">距独立首选 ${a.regret}分</div>`:'—'}</td><td>${ext?'—':`<input class="weight" type="number" min="0" max="100" value="${priority(c)}" data-priority="${esc(c.id)}" aria-label="${esc(c.name)}优先级">`}</td><td>${ext?'<span class="muted">在参演名单编辑备注</span>':`<button class="mini" data-edit="${esc(c.id)}">${lock(c)?'已锁定 · 修改':'查看 / 编辑'}</button><div class="loss">${Object.keys(c.scores).length}个候选</div>`}</td></tr>`;
+ }).join('')||`<tr><td colspan="6" class="empty">${theater()?'请在“参演角色”中添加名单，然后重新分配。':'没有匹配的角色。'}</td></tr>`;
+ $('rowcount').textContent=`显示${rows.length}位 · ${theater()?'仅显示本次参演名单':'全角色工作区'}`;
+ $('rows').querySelectorAll('[data-enable]').forEach(el=>el.onchange=()=>{data.characters.find(c=>c.id===el.dataset.enable).enabled=el.checked;markDirty();});
+ bindPriority($('rows'));bindEditors($('rows'));
+}
+function bindPriority(root){root.querySelectorAll('[data-priority]').forEach(el=>el.onchange=()=>{const c=data.characters.find(c=>c.id===el.dataset.priority);try{const n=readInt(el,0,100,'优先级');if(theater())T().priorities[c.id]=n;else c.priority=n;markDirty();}catch(e){el.value=priority(c);say(e.message,'error');}});}
+function bindEditors(root){root.querySelectorAll('[data-edit]').forEach(el=>el.onclick=()=>openEditor(el.dataset.edit));}
+function renderRoster(){
+ const rm=rosterMap(),rows=data.characters.filter(rosterMatches);
+ $('rosterCount').textContent=`已选${T().roster.length}位 · 自有${T().roster.filter(r=>r.source==='own').length} · 试用${T().roster.filter(r=>r.source==='trial').length} · 好友${T().roster.filter(r=>r.source==='friend').length}。名单人数不代表已通过入场资格验证。`;
+ $('rosterRows').innerHTML=rows.map(c=>{const r=rm.get(c.id),s=r?.source||'',ext=s==='trial'||s==='friend';return `<tr><td><select data-source="${esc(c.id)}" aria-label="${esc(c.name)}参演方式">${[['','未参演'],['own','自有角色'],['trial','试用角色'],['friend','好友助演']].map(([v,l])=>`<option value="${v}" ${v===s?'selected':''}>${l}</option>`).join('')}</select></td><td><div class="name">${esc(c.name)}</div><div class="role">${esc(c.role)}</div></td><td>${esc(c.type)}</td><td>${s==='own'?`<input type="number" class="weight" min="0" max="100" value="${priority(c)}" data-priority="${esc(c.id)}" aria-label="${esc(c.name)}剧诗优先级">`:'—'}</td><td>${ext?`<input class="externalnote" maxlength="300" data-external="${esc(c.id)}" aria-label="${esc(c.name)}自带装备备注" value="${esc(r.weapon_label||'')}" placeholder="可选：记录自带武器与精炼"><div class="loss">装备随角色使用 · 本人库存占用0</div>`:s==='own'?`<button class="mini" data-edit="${esc(c.id)}">${lock(c)?'剧诗锁定 · 修改':'候选与剧诗锁定'}</button>`:'<span class="muted">选择参演方式</span>'}</td></tr>`;}).join('')||'<tr><td colspan="5" class="empty">没有匹配的角色。</td></tr>';
+ $('rosterRows').querySelectorAll('[data-source]').forEach(el=>el.onchange=()=>{const id=el.dataset.source,prev=rm.get(id);T().roster=T().roster.filter(r=>r.character_id!==id);if(el.value)T().roster.push({character_id:id,source:el.value,weapon_label:prev?.weapon_label||''});markDirty();});
+ $('rosterRows').querySelectorAll('[data-external]').forEach(el=>el.onchange=()=>{T().roster.find(r=>r.character_id===el.dataset.external).weapon_label=el.value;markDirty();});
+ bindPriority($('rosterRows'));bindEditors($('rosterRows'));
+}
+function bulkTargets(){const b=$('bulkScope').value;return data.weapons.filter(w=>b==='favonius'?w.name.startsWith('西风'):b==='sacrificial'?w.name.startsWith('祭礼'):b==='four'?w.rarity===4:b==='five'?w.rarity===5:matches(w));}
+function renderInventory(){
+ const used=result?.assignment||[],rows=data.weapons.filter(matches);
+ $('inventoryRows').innerHTML=rows.map(w=>{const holders=used.filter(a=>a.weapon_id===w.id),reserved=theater()?(T().reservations[w.id]||0):0;
+ return `<tr><td><div class="weapon ${w.rarity===5?'gold':'purple'}">${esc(w.name)}</div><small class="muted">${esc(w.name_en)}</small></td><td>${esc(w.type)}</td><td>${w.rarity}★ / 精${w.refinement}</td><td><input type="number" min="0" max="${WeaponAllocator.MAX_QUANTITY}" step="1" inputmode="numeric" value="${w.quantity}" class="stock" data-stock="${esc(w.id)}" aria-label="${esc(w.name)}库存"></td><td>${theater()?`<input type="number" min="0" max="${w.quantity}" step="1" inputmode="numeric" value="${reserved}" class="stock" data-reserve="${esc(w.id)}" aria-label="${esc(w.name)}剧诗预留">`:'—'}</td><td class="${reserved>w.quantity?'bad':''}">${w.quantity-reserved}</td><td>${result?holders.length:'—'}</td><td class="holders">${result?(holders.map(a=>esc(a.character)+' #'+a.copy).join('、')||'—'):'待计算'}</td></tr>`;}).join('');
+ $('inventoryRows').querySelectorAll('[data-stock]').forEach(el=>el.onchange=()=>{const w=data.weapons.find(w=>w.id===el.dataset.stock);try{w.quantity=readInt(el,0,WeaponAllocator.MAX_QUANTITY,'库存');undoStock=null;markDirty();}catch(e){el.value=w.quantity;say(e.message,'error');}});
+ $('inventoryRows').querySelectorAll('[data-reserve]').forEach(el=>el.onchange=()=>{const w=data.weapons.find(w=>w.id===el.dataset.reserve);try{const n=readInt(el,0,w.quantity,'预留');T().reservations[w.id]=n;markDirty();}catch(e){el.value=T().reservations[w.id]||0;say(e.message,'error');}});
+ const targets=bulkTargets();$('bulkPreview').textContent=`将设置${targets.length}种武器${targets.length<=6?'：'+targets.map(w=>w.name).join('、'):''}`;
+ $('undoBulk').disabled=!undoStock;
+}
+function renderSources(){
+ $('assumptions').innerHTML=(data.assumptions||[]).map(a=>`<p>${esc(a)}</p>`).join('');
+ const rated=data.characters.reduce((s,c)=>s+Object.keys(c.scores).length,0);
+ $('coverage').textContent=`当前载入${data.characters.length}位角色、${data.weapons.length}种四五星武器、${rated}个候选评分。数据版本标签：${data.version||'自定义'}；资料日期：${data.as_of||'未标注'}。本次功能更新沿用原评分基线，部分配对仍待核验。`;
+ $('sourcesList').innerHTML=(data.sources||[]).map(s=>`<div class="sourceitem"><a href="${esc(safeURL(s.url))}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a><div class="muted">${esc(s.scope)}</div></div>`).join('');
+}
+function render(){renderModes();renderStats();renderAllocation();renderRoster();renderInventory();renderSources();}
+function switchTab(name){activeTab=name;document.querySelectorAll('.tabpanel').forEach(e=>e.classList.toggle('hidden',e.id!==name));document.querySelectorAll('[data-tab]').forEach(e=>e.classList.toggle('active',e.dataset.tab===name));$('filters').classList.toggle('hidden',!['allocation','inventory'].includes(name));}
+function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+function csvCell(v){let s=String(v??'');if(/^[\s]*[=+\-@]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
+function exportCSV(){if(dirty||!result)return;const rows=[['方案','角色','来源','武器','星级','精炼基线','副本','偏好分_非伤害','优先级','占用本人库存','前提备注']];
+ result.assignment.forEach(a=>rows.push([result.planning.name,a.character,'自有',a.weapon,a.rarity,a.refinement,a.copy,a.score,a.priority,'是',a.notes]));
+ result.external_characters.forEach(e=>rows.push([result.planning.name,e.character,e.source==='trial'?'试用':'好友助演',e.weapon_label,'','','','','','否','自带装备，不参与本人武器优化']));
+ download(theater()?'genshin_theater_allocation.csv':'genshin_account_allocation.csv','\ufeff'+rows.map(r=>r.map(csvCell).join(',')).join('\r\n'),'text/csv;charset=utf-8');}
+function parseRoster(text){
+ const tokens=text.split(/[\n\r,，、;；\t]+/).map(s=>s.trim()).filter(Boolean);if(!tokens.length)throw Error('请先填写角色名单。');
+ const chosen=new Set(),bad=[];
+ for(const token of tokens){const q=token.toLowerCase();let found=data.characters.filter(c=>[c.id,c.name,c.name.replace(/（.*?）|\(.*?\)/g,'')].some(s=>s.toLowerCase()===q));
+  if(!found.length)found=data.characters.filter(c=>c.name.includes(token));
+  if(found.length!==1)bad.push(token+(found.length?'（匹配多名）':'（未找到）'));else chosen.add(found[0].id);
+ }
+ if(bad.length)throw Error('名单未导入，请修正：'+bad.join('、'));return [...chosen];
+}
+function applyRoster(replace){try{const ids=parseRoster($('rosterPaste').value),old=rosterMap();
+ if(replace)T().roster=[];const existing=new Set(T().roster.map(r=>r.character_id));
+ ids.forEach(id=>{if(!existing.has(id))T().roster.push(old.get(id)||{character_id:id,source:'own',weapon_label:''});});
+ markDirty(`已${replace?'替换':'追加'}名单；共${T().roster.length}位。可逐人选择自有、试用或好友助演，然后重新分配。`);
+ }catch(e){say(e.message,'error');}}
+function syncDraft(){for(const el of $('candidateList').querySelectorAll('[data-score]'))draftScores[el.dataset.score]=readInt(el,0,100,'候选评分');}
+function editorError(msg){$('editError').textContent=msg;$('editError').classList.remove('hidden');}
+function renderCandidates(selected){const c=data.characters.find(c=>c.id===editId),wm=new Map(data.weapons.map(w=>[w.id,w]));
+ $('candidateList').innerHTML=Object.entries(draftScores).map(([id,s])=>`<div class="candrow"><span class="${wm.get(id).rarity===5?'gold':'purple'}">${esc(wm.get(id).name)} <small class="muted">库存${wm.get(id).quantity}</small></span><input type="number" min="0" max="100" value="${s}" data-score="${esc(id)}" aria-label="${esc(wm.get(id).name)}评分"><button class="mini" data-remove="${esc(id)}" aria-label="移除${esc(wm.get(id).name)}">×</button></div>`).join('');
+ $('candidateList').querySelectorAll('[data-remove]').forEach(el=>el.onclick=()=>{try{syncDraft();const l=$('editLock').value;delete draftScores[el.dataset.remove];renderCandidates(l);}catch(e){editorError(e.message);}});
+ $('editLock').innerHTML='<option value="">自动分配（不锁定）</option>'+Object.keys(draftScores).map(id=>`<option value="${esc(id)}">${esc(wm.get(id).name)}</option>`).join('');$('editLock').value=Object.hasOwn(draftScores,selected)?selected:'';
+ const available=data.weapons.filter(w=>w.type===c.type&&!Object.hasOwn(draftScores,w.id));$('addWeapon').innerHTML=available.map(w=>`<option value="${esc(w.id)}">${esc(w.name)} (${w.rarity}★)</option>`).join('');$('addCandidate').disabled=!available.length;
+}
+function openEditor(id){editId=id;const c=data.characters.find(c=>c.id===id);draftScores={...c.scores};$('editTitle').textContent=c.name;$('editReview').textContent=c.review||'自定义评分';$('editRole').value=c.role;$('editNote').value=c.notes||'';$('lockScope').textContent=theater()?'锁定武器（当前剧诗方案）':'锁定武器（全角色方案）';$('editError').classList.add('hidden');renderCandidates(lock(c));$('editSources').innerHTML=(c.sources||[]).map(s=>`<a href="${esc(safeURL(s.url))}" target="_blank" rel="noopener noreferrer">参考资料</a> · ${esc(s.scope)}`).join('<br>');$('editor').showModal();}
+$('addCandidate').onclick=()=>{try{syncDraft();const score=readInt($('addScore'),0,100,'新增评分'),wid=$('addWeapon').value;if(!wid)return;const l=$('editLock').value;draftScores[wid]=score;renderCandidates(l);}catch(e){editorError(e.message);}};
+$('saveEdit').onclick=()=>{try{syncDraft();if(!Object.keys(draftScores).length)throw Error('至少保留一个候选。');const proposed=clone(data),c=proposed.characters.find(c=>c.id===editId);
+ c.scores={...draftScores};c.role=$('editRole').value.trim()||c.role;c.notes=$('editNote').value;
+ if(theater())proposed.planning.theater.locks[c.id]=$('editLock').value||null;else c.locked_weapon=$('editLock').value||null;
+ // Removing a candidate which another saved plan locks would make that plan invalid.
+ // Reject the edit and retain the original configuration rather than silently deleting locks.
+ WeaponPlanner.validate(proposed);
+ const prior=data.characters.find(x=>x.id===editId);
+ if(JSON.stringify(prior.scores)!==JSON.stringify(c.scores)||prior.role!==c.role||prior.notes!==c.notes)c.review='用户编辑评分；需确认玩法与资料前提';
+ data=proposed;$('editor').close();markDirty();compute();
+ }catch(e){editorError(e.message+' 若其他方案锁定了被移除的候选，请先解除该锁定。');}};
+['closeEditor','cancelEdit'].forEach(id=>$(id).onclick=()=>$('editor').close());
+$('accountMode').onclick=()=>setMode('account');$('theaterMode').onclick=()=>setMode('theater');
+$('solveBtn').onclick=()=>{compute();switchTab('allocation');};
+$('search').oninput=()=>{renderAllocation();renderInventory();};$('typeFilter').onchange=()=>{renderAllocation();renderInventory();};
+$('rosterSearch').oninput=renderRoster;$('rosterType').onchange=renderRoster;$('selectedOnly').onchange=renderRoster;
+$('rosterReplace').onclick=()=>applyRoster(true);$('rosterAppend').onclick=()=>applyRoster(false);
+$('rosterClear').onclick=()=>{if(T().roster.length&&!confirm('清空当前剧诗名单？已保存的方案仍可重新载入。'))return;T().roster=[];markDirty();};
+$('rosterFiltered').onclick=()=>{const old=new Set(T().roster.map(r=>r.character_id));data.characters.filter(rosterMatches).forEach(c=>{if(!old.has(c.id))T().roster.push({character_id:c.id,source:'own',weapon_label:''});});markDirty();};
+$('planName').onchange=()=>{const n=$('planName').value.trim();if(!n||n.length>120){$('planName').value=T().name;say('方案名需为1–120个字符。','error');return;}T().name=n;markDirty();};
+$('respectLocks').onchange=()=>{T().use_account_locks=$('respectLocks').checked;markDirty();};
+$('savePlan').onclick=()=>{try{WeaponPlanner.validate(data);const i=data.planning.saved_plans.findIndex(p=>p.name===T().name);if(i<0&&data.planning.saved_plans.length>=50)throw Error('最多保存50个方案。');if(i<0)data.planning.saved_plans.push(clone(T()));else data.planning.saved_plans[i]=clone(T());persist();renderModes();say('已保存剧诗名单、优先级、锁定与预留数量。武器总库存由所有方案共用。',dirty?'dirty':'');}catch(e){say(e.message,'error');}};
+$('loadPlan').onclick=()=>{const v=$('savedPlans').value;if(v===''){say('请先选择一个已保存的剧诗方案。','error');return;}data.planning.theater=clone(data.planning.saved_plans[Number(v)]);markDirty();compute();};
+$('newPlan').onclick=()=>{if(T().roster.length&&!confirm('建立空白剧诗方案？请先保存需要保留的当前名单。'))return;data.planning.theater=WeaponPlanner.blankTheater();$('rosterSearch').value='';$('selectedOnly').checked=false;markDirty();switchTab('roster');};
+$('bulkScope').onchange=renderInventory;
+$('applyBulk').onclick=()=>{try{const n=readInt($('bulkQuantity'),0,WeaponAllocator.MAX_QUANTITY,'批量库存'),targets=bulkTargets();if(!targets.length)throw Error('当前范围没有武器。');undoStock=Object.fromEntries(targets.map(w=>[w.id,w.quantity]));targets.forEach(w=>w.quantity=n);markDirty(`已将${targets.length}种武器各设为${n}把。请重新分配；“撤销批量”可恢复此次修改。`);}catch(e){say(e.message,'error');}};
+$('undoBulk').onclick=()=>{if(!undoStock)return;for(const w of data.weapons)if(Object.hasOwn(undoStock,w.id))w.quantity=undoStock[w.id];undoStock=null;markDirty('已撤销上次批量库存修改。请重新分配。');};
+$('clearReservations').onclick=()=>{if(!theater())return;T().reservations={};markDirty('已清空当前剧诗的预留数量。');};
+$('configBtn').onclick=()=>download('genshin_allocator_v2_config.json',JSON.stringify(data,null,2),'application/json');
+$('csvBtn').onclick=exportCSV;$('resultBtn').onclick=()=>{if(!dirty&&result)download('genshin_allocator_v2_result.json',JSON.stringify(result,null,2),'application/json');};
+$('importBtn').onclick=()=>$('fileInput').click();$('fileInput').onchange=async()=>{const f=$('fileInput').files[0];if(!f)return;try{if(f.size>20*1024*1024)throw Error('配置超过20MB。');const parsed=WeaponPlanner.normalize(JSON.parse((await f.text()).replace(/^\uFEFF/,'')));data=parsed;undoStock=null;$('search').value='';$('typeFilter').value='';persist();switchTab('allocation');compute();}catch(e){say('导入失败，当前配置保留：'+e.message,'error');}finally{$('fileInput').value='';}};
+document.querySelectorAll('[data-tab]').forEach(e=>e.onclick=()=>switchTab(e.dataset.tab));
+window.appState=()=>({data:clone(data),result:clone(result),dirty,activeTab});
+window.addEventListener('beforeunload',e=>{if(dirty&&!$('storageStatus').textContent.startsWith('已')){e.preventDefault();e.returnValue='';}});
+$('theaterDetails').open=innerWidth>700;$('assumptionDetails').open=innerWidth>700;
+compute();if(bootWarning)say(bootWarning,'error');
+</script></body></html>
