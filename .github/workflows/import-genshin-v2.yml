@@ -1,0 +1,51 @@
+name: Import Genshin Allocator v2
+on:
+  push:
+    branches: [main]
+    paths: ['.github/genshin-v2/ready.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Verify and unpack source
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, io, json, tarfile
+          from pathlib import Path, PurePosixPath
+          root = Path('.github/genshin-v2')
+          manifest = json.loads((root / 'ready.json').read_text())
+          encoded = ''.join((root / name).read_text().strip() for name in manifest['parts'])
+          raw = base64.b64decode(encoded, validate=True)
+          assert hashlib.sha256(raw).hexdigest() == manifest['sha256'], 'Source checksum mismatch'
+          with tarfile.open(fileobj=io.BytesIO(raw), mode='r:xz') as archive:
+              for member in archive.getmembers():
+                  path = PurePosixPath(member.name)
+                  assert member.isfile() and not path.is_absolute() and '..' not in path.parts
+                  assert path.parts[0] == 'genshin-weapon-allocator'
+                  target = Path(member.name)
+                  assert not target.exists(), f'Refusing to overwrite {target}'
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(archive.extractfile(member).read())
+          PY
+      - name: Test and build the web application
+        working-directory: genshin-weapon-allocator
+        run: |
+          python3 -m unittest -v test_allocator.py test_planner.py
+          node --check allocator.js
+          node --check planner.js
+          node --check app.js
+          python3 build_web.py
+          echo '2941b7e12f2c6e87a0539de6f9a8e744909b6eb52efb724b6bf567fd268bd49e  index.html' | sha256sum --check
+      - name: Publish verified sources on a reviewable branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- genshin-weapon-allocator
+          git commit -m 'Publish Genshin weapon allocator v2 web app and source'
+          git push origin HEAD:refs/heads/publish/genshin-allocator-v2-20260929
+          echo "Prepared commit: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
