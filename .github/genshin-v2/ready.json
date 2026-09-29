@@ -1,0 +1,5 @@
+{
+  "parts": ["payload_1.txt", "payload_2.txt", "payload_3.txt", "payload_4.txt", "payload_5.txt", "payload_6.txt"],
+  "sha256": "babc2c7a09299df6a00d3e2ff7e8812cc0eebae657fc2e163512640595aa8096",
+  "html_sha256": "2941b7e12f2c6e87a0539de6f9a8e744909b6eb52efb724b6bf567fd268bd49e"
+}
